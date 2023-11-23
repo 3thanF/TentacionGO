@@ -1,0 +1,6 @@
+package com.tentacion.tentaciongo
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
