@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "844666729799",
+    "project_id": "tentaciongo-eeb97",
+    "storage_bucket": "tentaciongo-eeb97.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:844666729799:android:af4686b073debdcb4a0862",
+        "android_client_info": {
+          "package_name": "com.tentacion.tentaciongo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD70Ki5iI1kf3S84-24gii3Ce1K752--TQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
