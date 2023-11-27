@@ -4,27 +4,27 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'confirmacion_pago_mesa_model.dart';
-export 'confirmacion_pago_mesa_model.dart';
+import 'confirmacion_pago_reservacion_model.dart';
+export 'confirmacion_pago_reservacion_model.dart';
 
-class ConfirmacionPagoMesaWidget extends StatefulWidget {
-  const ConfirmacionPagoMesaWidget({super.key});
+class ConfirmacionPagoReservacionWidget extends StatefulWidget {
+  const ConfirmacionPagoReservacionWidget({super.key});
 
   @override
-  _ConfirmacionPagoMesaWidgetState createState() =>
-      _ConfirmacionPagoMesaWidgetState();
+  _ConfirmacionPagoReservacionWidgetState createState() =>
+      _ConfirmacionPagoReservacionWidgetState();
 }
 
-class _ConfirmacionPagoMesaWidgetState
-    extends State<ConfirmacionPagoMesaWidget> {
-  late ConfirmacionPagoMesaModel _model;
+class _ConfirmacionPagoReservacionWidgetState
+    extends State<ConfirmacionPagoReservacionWidget> {
+  late ConfirmacionPagoReservacionModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ConfirmacionPagoMesaModel());
+    _model = createModel(context, () => ConfirmacionPagoReservacionModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }

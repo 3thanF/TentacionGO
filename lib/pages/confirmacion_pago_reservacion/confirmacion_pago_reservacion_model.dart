@@ -1,9 +1,10 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'confirmacion_pago_mesa_widget.dart' show ConfirmacionPagoMesaWidget;
+import 'confirmacion_pago_reservacion_widget.dart'
+    show ConfirmacionPagoReservacionWidget;
 import 'package:flutter/material.dart';
 
-class ConfirmacionPagoMesaModel
-    extends FlutterFlowModel<ConfirmacionPagoMesaWidget> {
+class ConfirmacionPagoReservacionModel
+    extends FlutterFlowModel<ConfirmacionPagoReservacionWidget> {
   /// Initialization and disposal methods.
 
   @override

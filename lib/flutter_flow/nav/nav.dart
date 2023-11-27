@@ -102,9 +102,34 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const InformacionPagoMesasWidget(),
         ),
         FFRoute(
-          name: 'Confirmacion_Pago_Mesa',
-          path: '/confirmacionPagoMesa',
-          builder: (context, params) => const ConfirmacionPagoMesaWidget(),
+          name: 'Confirmacion_Pago_Reservacion',
+          path: '/confirmacionPagoReservacion',
+          builder: (context, params) => const ConfirmacionPagoReservacionWidget(),
+        ),
+        FFRoute(
+          name: 'Crear_Cuenta',
+          path: '/crearCuenta',
+          builder: (context, params) => const CrearCuentaWidget(),
+        ),
+        FFRoute(
+          name: 'Huevos_Mexicanos',
+          path: '/huevosMexicanos',
+          builder: (context, params) => const HuevosMexicanosWidget(),
+        ),
+        FFRoute(
+          name: 'Sandwich_Desayuno',
+          path: '/sandwichDesayuno',
+          builder: (context, params) => const SandwichDesayunoWidget(),
+        ),
+        FFRoute(
+          name: 'Paella',
+          path: '/paella',
+          builder: (context, params) => const PaellaWidget(),
+        ),
+        FFRoute(
+          name: 'Risotto',
+          path: '/risotto',
+          builder: (context, params) => const RisottoWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
