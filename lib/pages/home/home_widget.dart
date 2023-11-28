@@ -157,23 +157,32 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Card(
-                        clipBehavior: Clip.antiAliasWithSaveLayer,
-                        color: FlutterFlowTheme.of(context).primary,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(40.0),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              2.0, 2.0, 2.0, 2.0),
-                          child: AuthUserStreamWidget(
-                            builder: (context) => ClipRRect(
-                              borderRadius: BorderRadius.circular(40.0),
-                              child: Image.network(
-                                currentUserPhoto,
-                                width: 40.0,
-                                height: 40.0,
-                                fit: BoxFit.cover,
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed('Perfil');
+                        },
+                        child: Card(
+                          clipBehavior: Clip.antiAliasWithSaveLayer,
+                          color: FlutterFlowTheme.of(context).primary,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(40.0),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                2.0, 2.0, 2.0, 2.0),
+                            child: AuthUserStreamWidget(
+                              builder: (context) => ClipRRect(
+                                borderRadius: BorderRadius.circular(40.0),
+                                child: Image.network(
+                                  currentUserPhoto,
+                                  width: 40.0,
+                                  height: 40.0,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ),
@@ -1170,34 +1179,48 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                         ),
                                                       ),
                                                     ),
-                                                    Container(
-                                                      width: 100.0,
-                                                      height: 32.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondary,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(32.0),
-                                                      ),
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                              0.00, 0.00),
-                                                      child: Text(
-                                                        'Comprar',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Plus Jakarta Sans',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBackground,
-                                                                ),
+                                                    InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        context.pushNamed(
+                                                            'Filet_Mignon');
+                                                      },
+                                                      child: Container(
+                                                        width: 100.0,
+                                                        height: 32.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondary,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      32.0),
+                                                        ),
+                                                        alignment:
+                                                            const AlignmentDirectional(
+                                                                0.00, 0.00),
+                                                        child: Text(
+                                                          'Comprar',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Plus Jakarta Sans',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                              ),
+                                                        ),
                                                       ),
                                                     ),
                                                   ],
@@ -1289,34 +1312,48 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                       ),
                                                     ),
                                                   ),
-                                                  Container(
-                                                    width: 100.0,
-                                                    height: 32.0,
-                                                    decoration: BoxDecoration(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondary,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              32.0),
-                                                    ),
-                                                    alignment:
-                                                        const AlignmentDirectional(
-                                                            0.00, 0.00),
-                                                    child: Text(
-                                                      'Complete',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Plus Jakarta Sans',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryBackground,
-                                                              ),
+                                                  InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      context
+                                                          .pushNamed('Salmon');
+                                                    },
+                                                    child: Container(
+                                                      width: 100.0,
+                                                      height: 32.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondary,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(32.0),
+                                                      ),
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                              0.00, 0.00),
+                                                      child: Text(
+                                                        'Complete',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Plus Jakarta Sans',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                                ),
+                                                      ),
                                                     ),
                                                   ),
                                                 ],

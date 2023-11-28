@@ -126,7 +126,7 @@ class _CrearCuentaWidgetState extends State<CrearCuentaWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(25.0, 15.0, 15.0, 15.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -142,7 +142,7 @@ class _CrearCuentaWidgetState extends State<CrearCuentaWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 15.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 15.0, 15.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -179,7 +179,7 @@ class _CrearCuentaWidgetState extends State<CrearCuentaWidget> {
                             hintStyle: FlutterFlowTheme.of(context).labelMedium,
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).primary,
+                                color: FlutterFlowTheme.of(context).secondary,
                                 width: 2.0,
                               ),
                               borderRadius: BorderRadius.circular(10.0),
@@ -236,7 +236,7 @@ class _CrearCuentaWidgetState extends State<CrearCuentaWidget> {
                             hintStyle: FlutterFlowTheme.of(context).labelMedium,
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).primary,
+                                color: FlutterFlowTheme.of(context).secondary,
                                 width: 2.0,
                               ),
                               borderRadius: BorderRadius.circular(10.0),
@@ -306,7 +306,7 @@ class _CrearCuentaWidgetState extends State<CrearCuentaWidget> {
                             hintStyle: FlutterFlowTheme.of(context).labelMedium,
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).primary,
+                                color: FlutterFlowTheme.of(context).secondary,
                                 width: 2.0,
                               ),
                               borderRadius: BorderRadius.circular(10.0),
@@ -376,7 +376,7 @@ class _CrearCuentaWidgetState extends State<CrearCuentaWidget> {
                             hintStyle: FlutterFlowTheme.of(context).labelMedium,
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).primary,
+                                color: FlutterFlowTheme.of(context).secondary,
                                 width: 2.0,
                               ),
                               borderRadius: BorderRadius.circular(10.0),
@@ -433,7 +433,7 @@ class _CrearCuentaWidgetState extends State<CrearCuentaWidget> {
                             hintStyle: FlutterFlowTheme.of(context).labelMedium,
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).primary,
+                                color: FlutterFlowTheme.of(context).secondary,
                                 width: 2.0,
                               ),
                               borderRadius: BorderRadius.circular(10.0),

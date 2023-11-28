@@ -130,6 +130,31 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Risotto',
           path: '/risotto',
           builder: (context, params) => const RisottoWidget(),
+        ),
+        FFRoute(
+          name: 'Filet_Mignon',
+          path: '/filetMignon',
+          builder: (context, params) => const FiletMignonWidget(),
+        ),
+        FFRoute(
+          name: 'Salmon',
+          path: '/salmon',
+          builder: (context, params) => const SalmonWidget(),
+        ),
+        FFRoute(
+          name: 'Perfil',
+          path: '/perfil',
+          builder: (context, params) => const PerfilWidget(),
+        ),
+        FFRoute(
+          name: 'Editar_Perfil',
+          path: '/editarPerfil',
+          builder: (context, params) => const EditarPerfilWidget(),
+        ),
+        FFRoute(
+          name: 'Informacion_Personal',
+          path: '/informacionPersonal',
+          builder: (context, params) => const InformacionPersonalWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -14,3 +14,9 @@ export '/pages/sandwich_desayuno/sandwich_desayuno_widget.dart'
     show SandwichDesayunoWidget;
 export '/pages/paella/paella_widget.dart' show PaellaWidget;
 export '/pages/risotto/risotto_widget.dart' show RisottoWidget;
+export '/pages/filet_mignon/filet_mignon_widget.dart' show FiletMignonWidget;
+export '/pages/salmon/salmon_widget.dart' show SalmonWidget;
+export '/pages/perfil/perfil_widget.dart' show PerfilWidget;
+export '/pages/editar_perfil/editar_perfil_widget.dart' show EditarPerfilWidget;
+export '/pages/informacion_personal/informacion_personal_widget.dart'
+    show InformacionPersonalWidget;
