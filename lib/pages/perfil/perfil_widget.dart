@@ -422,8 +422,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                     color: FlutterFlowTheme.of(context).primaryBackground,
                     textStyle: FlutterFlowTheme.of(context).bodyMedium,
                     elevation: 0.0,
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).lineColor,
+                    borderSide: const BorderSide(
                       width: 2.0,
                     ),
                     borderRadius: BorderRadius.circular(38.0),
@@ -450,8 +449,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                     color: FlutterFlowTheme.of(context).primaryBackground,
                     textStyle: FlutterFlowTheme.of(context).bodyMedium,
                     elevation: 0.0,
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).lineColor,
+                    borderSide: const BorderSide(
                       width: 2.0,
                     ),
                     borderRadius: BorderRadius.circular(38.0),

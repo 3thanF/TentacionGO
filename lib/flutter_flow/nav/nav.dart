@@ -104,7 +104,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Confirmacion_Pago_Reservacion',
           path: '/confirmacionPagoReservacion',
-          builder: (context, params) => const ConfirmacionPagoReservacionWidget(),
+          builder: (context, params) => ConfirmacionPagoReservacionWidget(
+            nombre: params.getParam('nombre', ParamType.String),
+            fecha: params.getParam('fecha', ParamType.DateTime),
+            monto: params.getParam('monto', ParamType.String),
+          ),
         ),
         FFRoute(
           name: 'Crear_Cuenta',
@@ -152,9 +156,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const EditarPerfilWidget(),
         ),
         FFRoute(
-          name: 'Informacion_Personal',
-          path: '/informacionPersonal',
-          builder: (context, params) => const InformacionPersonalWidget(),
+          name: 'Ubicacion',
+          path: '/ubicacion',
+          builder: (context, params) => const UbicacionWidget(),
+        ),
+        FFRoute(
+          name: 'Resenas',
+          path: '/resenas',
+          builder: (context, params) => const ResenasWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

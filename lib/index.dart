@@ -18,5 +18,5 @@ export '/pages/filet_mignon/filet_mignon_widget.dart' show FiletMignonWidget;
 export '/pages/salmon/salmon_widget.dart' show SalmonWidget;
 export '/pages/perfil/perfil_widget.dart' show PerfilWidget;
 export '/pages/editar_perfil/editar_perfil_widget.dart' show EditarPerfilWidget;
-export '/pages/informacion_personal/informacion_personal_widget.dart'
-    show InformacionPersonalWidget;
+export '/pages/ubicacion/ubicacion_widget.dart' show UbicacionWidget;
+export '/pages/resenas/resenas_widget.dart' show ResenasWidget;
