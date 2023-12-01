@@ -262,8 +262,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed(
-                                'Informacion_Para_Reservaciones_De_Mesas');
+                            context.pushNamed('Ubicacion');
                           },
                           child: Container(
                             width: 230.0,

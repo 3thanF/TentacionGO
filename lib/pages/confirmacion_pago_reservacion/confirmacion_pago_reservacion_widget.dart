@@ -1,11 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'confirmacion_pago_reservacion_model.dart';
 export 'confirmacion_pago_reservacion_model.dart';
@@ -20,7 +18,7 @@ class ConfirmacionPagoReservacionWidget extends StatefulWidget {
 
   final String? nombre;
   final DateTime? fecha;
-  final String? monto;
+  final int? monto;
 
   @override
   _ConfirmacionPagoReservacionWidgetState createState() =>
@@ -37,17 +35,6 @@ class _ConfirmacionPagoReservacionWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => ConfirmacionPagoReservacionModel());
-
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await ReservacionesRecord.collection
-          .doc()
-          .set(createReservacionesRecordData(
-            nombre: widget.nombre,
-            fecha: widget.fecha?.toString(),
-            monto: widget.monto,
-          ));
-    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -137,7 +124,7 @@ class _ConfirmacionPagoReservacionWidgetState
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
               child: Text(
                 valueOrDefault<String>(
-                  widget.monto,
+                  widget.monto?.toString(),
                   '0',
                 ),
                 style: FlutterFlowTheme.of(context).displayLarge.override(
@@ -202,7 +189,7 @@ class _ConfirmacionPagoReservacionWidgetState
                                   0.0, 0.0, 0.0, 4.0),
                               child: Text(
                                 valueOrDefault<String>(
-                                  widget.monto,
+                                  widget.monto?.toString(),
                                   '0',
                                 ),
                                 style: FlutterFlowTheme.of(context).labelMedium,

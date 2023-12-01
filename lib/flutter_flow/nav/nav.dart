@@ -107,7 +107,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => ConfirmacionPagoReservacionWidget(
             nombre: params.getParam('nombre', ParamType.String),
             fecha: params.getParam('fecha', ParamType.DateTime),
-            monto: params.getParam('monto', ParamType.String),
+            monto: params.getParam('monto', ParamType.int),
           ),
         ),
         FFRoute(

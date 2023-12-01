@@ -51,8 +51,8 @@ class _InformacionPagoMesasWidgetState extends State<InformacionPagoMesasWidget>
     super.initState();
     _model = createModel(context, () => InformacionPagoMesasModel());
 
-    _model.textController ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
+    _model.txtmontoController ??= TextEditingController();
+    _model.txtmontoFocusNode ??= FocusNode();
 
     setupAnimations(
       animationsMap.values.where((anim) =>
@@ -159,57 +159,59 @@ class _InformacionPagoMesasWidgetState extends State<InformacionPagoMesasWidget>
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
-                child: TextFormField(
-                  controller: _model.textController,
-                  focusNode: _model.textFieldFocusNode,
-                  readOnly: true,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    labelText: '₡11.540',
-                    labelStyle:
-                        FlutterFlowTheme.of(context).labelMedium.override(
-                              fontFamily: 'Plus Jakarta Sans',
-                              fontSize: 40.0,
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                      child: TextFormField(
+                        controller: _model.txtmontoController,
+                        focusNode: _model.txtmontoFocusNode,
+                        autofocus: true,
+                        readOnly: true,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          labelText: '11540',
+                          labelStyle: FlutterFlowTheme.of(context).labelMedium,
+                          hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).alternate,
+                              width: 2.0,
                             ),
-                    hintStyle: FlutterFlowTheme.of(context).labelMedium,
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).alternate,
-                        width: 2.0,
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).primary,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          errorBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).error,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          focusedErrorBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).error,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                        style: FlutterFlowTheme.of(context).bodyMedium,
+                        validator: _model.txtmontoControllerValidator
+                            .asValidator(context),
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).primary,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    errorBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).error,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    focusedErrorBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).error,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
-                  style: FlutterFlowTheme.of(context).bodyMedium,
-                  textAlign: TextAlign.start,
-                  keyboardType:
-                      const TextInputType.numberWithOptions(decimal: true),
-                  validator:
-                      _model.textControllerValidator.asValidator(context),
-                ),
+                ],
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
@@ -428,8 +430,8 @@ class _InformacionPagoMesasWidgetState extends State<InformacionPagoMesasWidget>
                           ParamType.DateTime,
                         ),
                         'monto': serializeParam(
-                          _model.textController.text,
-                          ParamType.String,
+                          int.tryParse(_model.txtmontoController.text),
+                          ParamType.int,
                         ),
                       }.withoutNulls,
                     );

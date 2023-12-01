@@ -1,6 +1,6 @@
-import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'ubicacion_model.dart';
@@ -50,8 +50,6 @@ class _UbicacionWidgetState extends State<UbicacionWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        resizeToAvoidBottomInset: false,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
@@ -67,50 +65,53 @@ class _UbicacionWidgetState extends State<UbicacionWidget> {
           top: true,
           child: Column(
             mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
                 child: Text(
-                  'Abajo encontrarás como ubicarnos con Google Maps.',
-                  style: FlutterFlowTheme.of(context).labelMedium,
+                  'Para poder obtener una mejor idea sobre donde nos ubicamos, presiona el botón de abajo para redireccionarte a nuestra ubicación en Google Maps.',
+                  style: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily: 'Plus Jakarta Sans',
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        fontSize: 19.0,
+                      ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                child: Material(
-                  color: Colors.transparent,
-                  elevation: 2.0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
-                  child: Container(
-                    width: double.infinity,
-                    height: 400.0,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                      borderRadius: BorderRadius.circular(12.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FFButtonWidget(
+                      onPressed: () async {
+                        await launchURL(
+                            'https://www.google.com/maps/place/Restaurante+Tentaci%C3%B3n/@9.4309375,-84.1675663,17z/data=!3m1!4b1!4m6!3m5!1s0x8fa173955a17e6ed:0x6a1ec87c22c82f3f!8m2!3d9.4309322!4d-84.1649914!16s%2Fg%2F11f2b5t_3r?entry=ttu');
+                      },
+                      text: 'Abrir ubicación',
+                      options: FFButtonOptions(
+                        height: 40.0,
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            24.0, 0.0, 24.0, 0.0),
+                        iconPadding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: FlutterFlowTheme.of(context).primary,
+                        textStyle:
+                            FlutterFlowTheme.of(context).titleSmall.override(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  color: Colors.white,
+                                ),
+                        elevation: 3.0,
+                        borderSide: const BorderSide(
+                          color: Colors.transparent,
+                          width: 1.0,
+                        ),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                     ),
-                    child: FlutterFlowGoogleMap(
-                      controller: _model.googleMapsController,
-                      onCameraIdle: (latLng) =>
-                          _model.googleMapsCenter = latLng,
-                      initialLocation: _model.googleMapsCenter ??=
-                          const LatLng(9.431090947966405, -84.16475536902854),
-                      markerColor: GoogleMarkerColor.violet,
-                      mapType: MapType.normal,
-                      style: GoogleMapStyle.standard,
-                      initialZoom: 14.0,
-                      allowInteraction: true,
-                      allowZoom: true,
-                      showZoomControls: true,
-                      showLocation: true,
-                      showCompass: false,
-                      showMapToolbar: false,
-                      showTraffic: false,
-                      centerMapOnMarkerTap: true,
-                    ),
-                  ),
+                  ],
                 ),
               ),
             ],
