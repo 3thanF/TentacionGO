@@ -7,6 +7,9 @@ import 'schema/util/firestore_util.dart';
 
 import 'schema/users_record.dart';
 import 'schema/reviews_record.dart';
+import 'schema/desayuno_kids_record.dart';
+import 'schema/almuerzo_kids_record.dart';
+import 'schema/cena_kids_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -16,6 +19,9 @@ export 'schema/util/schema_util.dart';
 
 export 'schema/users_record.dart';
 export 'schema/reviews_record.dart';
+export 'schema/desayuno_kids_record.dart';
+export 'schema/almuerzo_kids_record.dart';
+export 'schema/cena_kids_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -86,6 +92,117 @@ Future<List<ReviewsRecord>> queryReviewsRecordOnce({
     queryCollectionOnce(
       ReviewsRecord.collection,
       ReviewsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query DesayunoKidsRecords (as a Stream and as a Future).
+Future<int> queryDesayunoKidsRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      DesayunoKidsRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<DesayunoKidsRecord>> queryDesayunoKidsRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      DesayunoKidsRecord.collection,
+      DesayunoKidsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<DesayunoKidsRecord>> queryDesayunoKidsRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      DesayunoKidsRecord.collection,
+      DesayunoKidsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query AlmuerzoKidsRecords (as a Stream and as a Future).
+Future<int> queryAlmuerzoKidsRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      AlmuerzoKidsRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<AlmuerzoKidsRecord>> queryAlmuerzoKidsRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      AlmuerzoKidsRecord.collection,
+      AlmuerzoKidsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<AlmuerzoKidsRecord>> queryAlmuerzoKidsRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      AlmuerzoKidsRecord.collection,
+      AlmuerzoKidsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query CenaKidsRecords (as a Stream and as a Future).
+Future<int> queryCenaKidsRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      CenaKidsRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<CenaKidsRecord>> queryCenaKidsRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      CenaKidsRecord.collection,
+      CenaKidsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<CenaKidsRecord>> queryCenaKidsRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      CenaKidsRecord.collection,
+      CenaKidsRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

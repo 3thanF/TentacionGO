@@ -169,6 +169,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Politicas',
           path: '/politicas',
           builder: (context, params) => const PoliticasWidget(),
+        ),
+        FFRoute(
+          name: 'Informacion_Para_Reservaciones_De_Eventos',
+          path: '/informacionParaReservacionesDeEventos',
+          builder: (context, params) =>
+              const InformacionParaReservacionesDeEventosWidget(),
+        ),
+        FFRoute(
+          name: 'menuKids',
+          path: '/menuKids',
+          builder: (context, params) => const MenuKidsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

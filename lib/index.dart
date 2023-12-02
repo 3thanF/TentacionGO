@@ -21,3 +21,6 @@ export '/pages/editar_perfil/editar_perfil_widget.dart' show EditarPerfilWidget;
 export '/pages/ubicacion/ubicacion_widget.dart' show UbicacionWidget;
 export '/pages/reviews/reviews_widget.dart' show ReviewsWidget;
 export '/pages/politicas/politicas_widget.dart' show PoliticasWidget;
+export '/pages/informacion_para_reservaciones_de_eventos/informacion_para_reservaciones_de_eventos_widget.dart'
+    show InformacionParaReservacionesDeEventosWidget;
+export '/pages/menu_kids/menu_kids_widget.dart' show MenuKidsWidget;
