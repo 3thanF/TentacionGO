@@ -8,7 +8,7 @@ service cloud.firestore {
       allow delete: if true;
     }
 
-    match /reservaciones/{document} {
+    match /reviews/{document} {
       allow create: if true;
       allow read: if true;
       allow write: if true;

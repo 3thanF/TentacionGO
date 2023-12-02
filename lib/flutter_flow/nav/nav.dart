@@ -161,9 +161,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const UbicacionWidget(),
         ),
         FFRoute(
-          name: 'Resenas',
-          path: '/resenas',
-          builder: (context, params) => const ResenasWidget(),
+          name: 'Reviews',
+          path: '/reviews',
+          builder: (context, params) => const ReviewsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'resenas_widget.dart' show ResenasWidget;
+import 'reviews_widget.dart' show ReviewsWidget;
 import 'package:flutter/material.dart';
 
-class ResenasModel extends FlutterFlowModel<ResenasWidget> {
+class ReviewsModel extends FlutterFlowModel<ReviewsWidget> {
   /// Initialization and disposal methods.
 
   @override

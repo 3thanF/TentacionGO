@@ -19,4 +19,4 @@ export '/pages/salmon/salmon_widget.dart' show SalmonWidget;
 export '/pages/perfil/perfil_widget.dart' show PerfilWidget;
 export '/pages/editar_perfil/editar_perfil_widget.dart' show EditarPerfilWidget;
 export '/pages/ubicacion/ubicacion_widget.dart' show UbicacionWidget;
-export '/pages/resenas/resenas_widget.dart' show ResenasWidget;
+export '/pages/reviews/reviews_widget.dart' show ReviewsWidget;

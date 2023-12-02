@@ -73,7 +73,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: const Offset(50.0, 0.0),
+          begin: const Offset(30.0, 0.0),
           end: const Offset(0.0, 0.0),
         ),
       ],
@@ -92,12 +92,31 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: const Offset(0.0, 30.0),
+          begin: const Offset(50.0, 0.0),
           end: const Offset(0.0, 0.0),
         ),
       ],
     ),
     'containerOnPageLoadAnimation5': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          begin: const Offset(0.0, 30.0),
+          end: const Offset(0.0, 0.0),
+        ),
+      ],
+    ),
+    'containerOnPageLoadAnimation6': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
         FadeEffect(
@@ -262,6 +281,121 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
+                            context.pushNamed('Reviews');
+                          },
+                          child: Container(
+                            width: 230.0,
+                            height: 50.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              boxShadow: const [
+                                BoxShadow(
+                                  blurRadius: 4.0,
+                                  color: Color(0x34090F13),
+                                  offset: Offset(0.0, 2.0),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Container(
+                                  width: double.infinity,
+                                  height: 140.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    borderRadius: const BorderRadius.only(
+                                      bottomLeft: Radius.circular(0.0),
+                                      bottomRight: Radius.circular(0.0),
+                                      topLeft: Radius.circular(12.0),
+                                      topRight: Radius.circular(12.0),
+                                    ),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        12.0, 12.0, 12.0, 12.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                          width: 36.0,
+                                          height: 36.0,
+                                          decoration: BoxDecoration(
+                                            color: const Color(0x98FFFFFF),
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                          ),
+                                          alignment:
+                                              const AlignmentDirectional(0.00, 0.00),
+                                          child: const Icon(
+                                            Icons.star_sharp,
+                                            color: Colors.white,
+                                            size: 20.0,
+                                          ),
+                                        ),
+                                        Text(
+                                          'Reseñas',
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleMedium
+                                              .override(
+                                                fontFamily: 'Plus Jakarta Sans',
+                                                color: Colors.white,
+                                              ),
+                                        ),
+                                        Text(
+                                          'Mira que piensan nuestros clientes',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Plus Jakarta Sans',
+                                                color: Colors.white,
+                                              ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      12.0, 12.0, 12.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 8.0, 0.0),
+                                        child: Text(
+                                          'Aquí podrás encontrar \nopiniones de nuestros\nservicios.',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ).animateOnPageLoad(
+                            animationsMap['containerOnPageLoadAnimation1']!),
+                      ),
+                      Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            16.0, 12.0, 12.0, 12.0),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
                             context.pushNamed('Ubicacion');
                           },
                           child: Container(
@@ -366,7 +500,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                             ),
                           ),
                         ).animateOnPageLoad(
-                            animationsMap['containerOnPageLoadAnimation1']!),
+                            animationsMap['containerOnPageLoadAnimation2']!),
                       ),
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -482,7 +616,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                             ),
                           ),
                         ).animateOnPageLoad(
-                            animationsMap['containerOnPageLoadAnimation2']!),
+                            animationsMap['containerOnPageLoadAnimation3']!),
                       ),
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -588,7 +722,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                             ],
                           ),
                         ).animateOnPageLoad(
-                            animationsMap['containerOnPageLoadAnimation3']!),
+                            animationsMap['containerOnPageLoadAnimation4']!),
                       ),
                     ],
                   ),
@@ -802,7 +936,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                             ),
                                           ),
                                         ).animateOnPageLoad(animationsMap[
-                                            'containerOnPageLoadAnimation4']!),
+                                            'containerOnPageLoadAnimation5']!),
                                       ),
                                       Container(
                                         width: double.infinity,
@@ -934,7 +1068,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                           ),
                                         ),
                                       ).animateOnPageLoad(animationsMap[
-                                          'containerOnPageLoadAnimation5']!),
+                                          'containerOnPageLoadAnimation6']!),
                                     ],
                                   ),
                                 ),

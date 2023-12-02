@@ -6,7 +6,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'schema/util/firestore_util.dart';
 
 import 'schema/users_record.dart';
-import 'schema/reservaciones_record.dart';
+import 'schema/reviews_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -15,7 +15,7 @@ export 'schema/util/firestore_util.dart';
 export 'schema/util/schema_util.dart';
 
 export 'schema/users_record.dart';
-export 'schema/reservaciones_record.dart';
+export 'schema/reviews_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -54,38 +54,38 @@ Future<List<UsersRecord>> queryUsersRecordOnce({
       singleRecord: singleRecord,
     );
 
-/// Functions to query ReservacionesRecords (as a Stream and as a Future).
-Future<int> queryReservacionesRecordCount({
+/// Functions to query ReviewsRecords (as a Stream and as a Future).
+Future<int> queryReviewsRecordCount({
   Query Function(Query)? queryBuilder,
   int limit = -1,
 }) =>
     queryCollectionCount(
-      ReservacionesRecord.collection,
+      ReviewsRecord.collection,
       queryBuilder: queryBuilder,
       limit: limit,
     );
 
-Stream<List<ReservacionesRecord>> queryReservacionesRecord({
+Stream<List<ReviewsRecord>> queryReviewsRecord({
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollection(
-      ReservacionesRecord.collection,
-      ReservacionesRecord.fromSnapshot,
+      ReviewsRecord.collection,
+      ReviewsRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
     );
 
-Future<List<ReservacionesRecord>> queryReservacionesRecordOnce({
+Future<List<ReviewsRecord>> queryReviewsRecordOnce({
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollectionOnce(
-      ReservacionesRecord.collection,
-      ReservacionesRecord.fromSnapshot,
+      ReviewsRecord.collection,
+      ReviewsRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
