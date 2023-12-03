@@ -24,3 +24,11 @@ export '/pages/politicas/politicas_widget.dart' show PoliticasWidget;
 export '/pages/informacion_para_reservaciones_de_eventos/informacion_para_reservaciones_de_eventos_widget.dart'
     show InformacionParaReservacionesDeEventosWidget;
 export '/pages/menu_kids/menu_kids_widget.dart' show MenuKidsWidget;
+export '/pages/menu_saludable/menu_saludable_widget.dart'
+    show MenuSaludableWidget;
+export '/pages/crear_review/crear_review_widget.dart' show CrearReviewWidget;
+export '/pages/informacion_personal/informacion_personal_widget.dart'
+    show InformacionPersonalWidget;
+export '/pages/marcar_alergias/marcar_alergias_widget.dart'
+    show MarcarAlergiasWidget;
+export '/pages/alergias/alergias_widget.dart' show AlergiasWidget;

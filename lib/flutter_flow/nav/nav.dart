@@ -180,6 +180,31 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'menuKids',
           path: '/menuKids',
           builder: (context, params) => const MenuKidsWidget(),
+        ),
+        FFRoute(
+          name: 'menuSaludable',
+          path: '/menuSaludable',
+          builder: (context, params) => const MenuSaludableWidget(),
+        ),
+        FFRoute(
+          name: 'crearReview',
+          path: '/crearReview',
+          builder: (context, params) => const CrearReviewWidget(),
+        ),
+        FFRoute(
+          name: 'informacionPersonal',
+          path: '/informacionPersonal',
+          builder: (context, params) => const InformacionPersonalWidget(),
+        ),
+        FFRoute(
+          name: 'marcarAlergias',
+          path: '/marcarAlergias',
+          builder: (context, params) => const MarcarAlergiasWidget(),
+        ),
+        FFRoute(
+          name: 'alergias',
+          path: '/alergias',
+          builder: (context, params) => const AlergiasWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

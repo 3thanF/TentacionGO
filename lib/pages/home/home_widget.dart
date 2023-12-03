@@ -130,7 +130,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: const Offset(50.0, 0.0),
+          begin: const Offset(30.0, 0.0),
           end: const Offset(0.0, 0.0),
         ),
       ],
@@ -149,12 +149,31 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: const Offset(0.0, 30.0),
+          begin: const Offset(50.0, 0.0),
           end: const Offset(0.0, 0.0),
         ),
       ],
     ),
     'containerOnPageLoadAnimation8': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          begin: const Offset(0.0, 30.0),
+          end: const Offset(0.0, 0.0),
+        ),
+      ],
+    ),
+    'containerOnPageLoadAnimation9': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
         FadeEffect(
@@ -319,6 +338,122 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
+                            await launchURL(
+                                'https://wa.me/?text=¡Mira%20esta%20fantástica%20aplicación!%20https://app.flutterflow.io/project/tentacion-g-o-inm1jg?tab=widgetTree&page=Home');
+                          },
+                          child: Container(
+                            width: 230.0,
+                            height: 50.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              boxShadow: const [
+                                BoxShadow(
+                                  blurRadius: 4.0,
+                                  color: Color(0x34090F13),
+                                  offset: Offset(0.0, 2.0),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Container(
+                                  width: double.infinity,
+                                  height: 140.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    borderRadius: const BorderRadius.only(
+                                      bottomLeft: Radius.circular(0.0),
+                                      bottomRight: Radius.circular(0.0),
+                                      topLeft: Radius.circular(12.0),
+                                      topRight: Radius.circular(12.0),
+                                    ),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        12.0, 12.0, 12.0, 12.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                          width: 36.0,
+                                          height: 36.0,
+                                          decoration: BoxDecoration(
+                                            color: const Color(0x98FFFFFF),
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                          ),
+                                          alignment:
+                                              const AlignmentDirectional(0.00, 0.00),
+                                          child: const Icon(
+                                            Icons.share_outlined,
+                                            color: Colors.white,
+                                            size: 20.0,
+                                          ),
+                                        ),
+                                        Text(
+                                          'Compartir la app',
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleMedium
+                                              .override(
+                                                fontFamily: 'Plus Jakarta Sans',
+                                                color: Colors.white,
+                                              ),
+                                        ),
+                                        Text(
+                                          'Compárte con tus amigos',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Plus Jakarta Sans',
+                                                color: Colors.white,
+                                              ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      12.0, 12.0, 12.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 8.0, 0.0),
+                                        child: Text(
+                                          'Nos encantaría que tus amigos\n también usen la\n app, compártela.',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ).animateOnPageLoad(
+                            animationsMap['containerOnPageLoadAnimation1']!),
+                      ),
+                      Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            16.0, 12.0, 12.0, 12.0),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
                             context.pushNamed('menuKids');
                           },
                           child: Container(
@@ -423,7 +558,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                             ),
                           ),
                         ).animateOnPageLoad(
-                            animationsMap['containerOnPageLoadAnimation1']!),
+                            animationsMap['containerOnPageLoadAnimation2']!),
                       ),
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -538,7 +673,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                             ),
                           ),
                         ).animateOnPageLoad(
-                            animationsMap['containerOnPageLoadAnimation2']!),
+                            animationsMap['containerOnPageLoadAnimation3']!),
                       ),
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -653,7 +788,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                             ),
                           ),
                         ).animateOnPageLoad(
-                            animationsMap['containerOnPageLoadAnimation3']!),
+                            animationsMap['containerOnPageLoadAnimation4']!),
                       ),
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -768,7 +903,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                             ),
                           ),
                         ).animateOnPageLoad(
-                            animationsMap['containerOnPageLoadAnimation4']!),
+                            animationsMap['containerOnPageLoadAnimation5']!),
                       ),
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -884,113 +1019,122 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                             ),
                           ),
                         ).animateOnPageLoad(
-                            animationsMap['containerOnPageLoadAnimation5']!),
+                            animationsMap['containerOnPageLoadAnimation6']!),
                       ),
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 12.0, 16.0, 12.0),
-                        child: Container(
-                          width: 230.0,
-                          height: 50.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            boxShadow: const [
-                              BoxShadow(
-                                blurRadius: 4.0,
-                                color: Color(0x34090F13),
-                                offset: Offset(0.0, 2.0),
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(12.0),
-                          ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Container(
-                                width: double.infinity,
-                                height: 140.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  borderRadius: const BorderRadius.only(
-                                    bottomLeft: Radius.circular(0.0),
-                                    bottomRight: Radius.circular(0.0),
-                                    topLeft: Radius.circular(12.0),
-                                    topRight: Radius.circular(12.0),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed('menuSaludable');
+                          },
+                          child: Container(
+                            width: 230.0,
+                            height: 50.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              boxShadow: const [
+                                BoxShadow(
+                                  blurRadius: 4.0,
+                                  color: Color(0x34090F13),
+                                  offset: Offset(0.0, 2.0),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Container(
+                                  width: double.infinity,
+                                  height: 140.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    borderRadius: const BorderRadius.only(
+                                      bottomLeft: Radius.circular(0.0),
+                                      bottomRight: Radius.circular(0.0),
+                                      topLeft: Radius.circular(12.0),
+                                      topRight: Radius.circular(12.0),
+                                    ),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        12.0, 12.0, 12.0, 12.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                          width: 36.0,
+                                          height: 36.0,
+                                          decoration: BoxDecoration(
+                                            color: const Color(0x98FFFFFF),
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                          ),
+                                          alignment:
+                                              const AlignmentDirectional(0.00, 0.00),
+                                          child: const Icon(
+                                            Icons.favorite,
+                                            color: Colors.white,
+                                            size: 20.0,
+                                          ),
+                                        ),
+                                        Text(
+                                          'Menús saludables',
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleMedium
+                                              .override(
+                                                fontFamily: 'Plus Jakarta Sans',
+                                                color: Colors.white,
+                                              ),
+                                        ),
+                                        Text(
+                                          'Apartado para platos saludables',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Plus Jakarta Sans',
+                                                color: Colors.white,
+                                              ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
-                                child: Padding(
+                                Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 12.0, 12.0, 12.0),
-                                  child: Column(
+                                      12.0, 12.0, 12.0, 0.0),
+                                  child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
                                     children: [
-                                      Container(
-                                        width: 36.0,
-                                        height: 36.0,
-                                        decoration: BoxDecoration(
-                                          color: const Color(0x98FFFFFF),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 8.0, 0.0),
+                                        child: Text(
+                                          'En Tentación, la salud nos \nimporta aquí verás nuestro\nmenú de comidas saludables.',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium,
                                         ),
-                                        alignment:
-                                            const AlignmentDirectional(0.00, 0.00),
-                                        child: const Icon(
-                                          Icons.food_bank,
-                                          color: Colors.white,
-                                          size: 20.0,
-                                        ),
-                                      ),
-                                      Text(
-                                        'Imagenes de nuestros platos',
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleMedium
-                                            .override(
-                                              fontFamily: 'Plus Jakarta Sans',
-                                              color: Colors.white,
-                                            ),
-                                      ),
-                                      Text(
-                                        '7 imágenes',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Plus Jakarta Sans',
-                                              color: Colors.white,
-                                            ),
                                       ),
                                     ],
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 12.0, 12.0, 0.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 8.0, 0.0),
-                                      child: Text(
-                                        'Aquí encontrará un poco de lo\nque puede encontrar en\n Tentación.',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ).animateOnPageLoad(
-                            animationsMap['containerOnPageLoadAnimation6']!),
+                            animationsMap['containerOnPageLoadAnimation7']!),
                       ),
                     ],
                   ),
@@ -1204,7 +1348,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                             ),
                                           ),
                                         ).animateOnPageLoad(animationsMap[
-                                            'containerOnPageLoadAnimation7']!),
+                                            'containerOnPageLoadAnimation8']!),
                                       ),
                                       Container(
                                         width: double.infinity,
@@ -1336,7 +1480,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                           ),
                                         ),
                                       ).animateOnPageLoad(animationsMap[
-                                          'containerOnPageLoadAnimation8']!),
+                                          'containerOnPageLoadAnimation9']!),
                                     ],
                                   ),
                                 ),

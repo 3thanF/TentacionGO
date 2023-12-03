@@ -10,6 +10,10 @@ import 'schema/reviews_record.dart';
 import 'schema/desayuno_kids_record.dart';
 import 'schema/almuerzo_kids_record.dart';
 import 'schema/cena_kids_record.dart';
+import 'schema/desayuno_saludable_record.dart';
+import 'schema/almuerzo_saludable_record.dart';
+import 'schema/cena_saludable_record.dart';
+import 'schema/alergias_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -22,6 +26,10 @@ export 'schema/reviews_record.dart';
 export 'schema/desayuno_kids_record.dart';
 export 'schema/almuerzo_kids_record.dart';
 export 'schema/cena_kids_record.dart';
+export 'schema/desayuno_saludable_record.dart';
+export 'schema/almuerzo_saludable_record.dart';
+export 'schema/cena_saludable_record.dart';
+export 'schema/alergias_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -203,6 +211,154 @@ Future<List<CenaKidsRecord>> queryCenaKidsRecordOnce({
     queryCollectionOnce(
       CenaKidsRecord.collection,
       CenaKidsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query DesayunoSaludableRecords (as a Stream and as a Future).
+Future<int> queryDesayunoSaludableRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      DesayunoSaludableRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<DesayunoSaludableRecord>> queryDesayunoSaludableRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      DesayunoSaludableRecord.collection,
+      DesayunoSaludableRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<DesayunoSaludableRecord>> queryDesayunoSaludableRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      DesayunoSaludableRecord.collection,
+      DesayunoSaludableRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query AlmuerzoSaludableRecords (as a Stream and as a Future).
+Future<int> queryAlmuerzoSaludableRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      AlmuerzoSaludableRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<AlmuerzoSaludableRecord>> queryAlmuerzoSaludableRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      AlmuerzoSaludableRecord.collection,
+      AlmuerzoSaludableRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<AlmuerzoSaludableRecord>> queryAlmuerzoSaludableRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      AlmuerzoSaludableRecord.collection,
+      AlmuerzoSaludableRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query CenaSaludableRecords (as a Stream and as a Future).
+Future<int> queryCenaSaludableRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      CenaSaludableRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<CenaSaludableRecord>> queryCenaSaludableRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      CenaSaludableRecord.collection,
+      CenaSaludableRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<CenaSaludableRecord>> queryCenaSaludableRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      CenaSaludableRecord.collection,
+      CenaSaludableRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query AlergiasRecords (as a Stream and as a Future).
+Future<int> queryAlergiasRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      AlergiasRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<AlergiasRecord>> queryAlergiasRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      AlergiasRecord.collection,
+      AlergiasRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<AlergiasRecord>> queryAlergiasRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      AlergiasRecord.collection,
+      AlergiasRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

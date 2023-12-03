@@ -2,6 +2,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -87,104 +88,141 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                     )
                   ],
                 ),
-                child: Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(12.0, 16.0, 12.0, 24.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Column(
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          12.0, 16.0, 12.0, 24.0),
+                      child: Row(
                         mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 12.0),
-                            child: FutureBuilder<int>(
-                              future: queryReviewsRecordCount(),
-                              builder: (context, snapshot) {
-                                // Customize what your widget looks like when it's loading.
-                                if (!snapshot.hasData) {
-                                  return Center(
-                                    child: SizedBox(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      child: CircularProgressIndicator(
-                                        valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                          FlutterFlowTheme.of(context).primary,
-                                        ),
-                                      ),
-                                    ),
-                                  );
-                                }
-                                int txtReviewsCountCount = snapshot.data!;
-                                return Text(
-                                  valueOrDefault<String>(
-                                    txtReviewsCountCount.toString(),
-                                    '0',
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .displaySmall
-                                      .override(
-                                        fontFamily: 'Urbanist',
-                                        fontSize: 28.0,
-                                      ),
-                                );
-                              },
-                            ),
-                          ),
-                          Text(
-                            '# de reseñas',
-                            style: FlutterFlowTheme.of(context).labelMedium,
-                          ),
-                        ],
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Row(
+                          Column(
                             mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 12.0),
-                                child: Text(
-                                  '5',
-                                  style: FlutterFlowTheme.of(context)
-                                      .displaySmall
-                                      .override(
-                                        fontFamily: 'Urbanist',
-                                        fontSize: 28.0,
+                                child: FutureBuilder<int>(
+                                  future: queryReviewsRecordCount(),
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: SizedBox(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                    int txtReviewsCountCount = snapshot.data!;
+                                    return Text(
+                                      valueOrDefault<String>(
+                                        txtReviewsCountCount.toString(),
+                                        '0',
                                       ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .displaySmall
+                                          .override(
+                                            fontFamily: 'Urbanist',
+                                            fontSize: 28.0,
+                                          ),
+                                    );
+                                  },
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    4.0, 0.0, 0.0, 12.0),
-                                child: Icon(
-                                  Icons.star_rounded,
-                                  color: FlutterFlowTheme.of(context).warning,
-                                  size: 24.0,
-                                ),
+                              Text(
+                                '# de reseñas',
+                                style: FlutterFlowTheme.of(context).labelMedium,
                               ),
                             ],
                           ),
-                          Text(
-                            'Media de ratings',
-                            style: FlutterFlowTheme.of(context)
-                                .labelMedium
-                                .override(
-                                  fontFamily: 'Plus Jakarta Sans',
-                                  fontSize: 12.0,
-                                ),
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 12.0),
+                                    child: Text(
+                                      '5',
+                                      style: FlutterFlowTheme.of(context)
+                                          .displaySmall
+                                          .override(
+                                            fontFamily: 'Urbanist',
+                                            fontSize: 28.0,
+                                          ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        4.0, 0.0, 0.0, 12.0),
+                                    child: Icon(
+                                      Icons.star_rounded,
+                                      color:
+                                          FlutterFlowTheme.of(context).warning,
+                                      size: 24.0,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Text(
+                                'Media de ratings',
+                                style: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      fontFamily: 'Plus Jakarta Sans',
+                                      fontSize: 12.0,
+                                    ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
-                    ],
-                  ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          15.0, 15.0, 15.0, 15.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          context.pushNamed('crearReview');
+                        },
+                        text: 'Compartir mi Experiencia',
+                        options: FFButtonOptions(
+                          width: 300.0,
+                          height: 40.0,
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Plus Jakarta Sans',
+                                    color: Colors.white,
+                                  ),
+                          elevation: 3.0,
+                          borderSide: const BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               StreamBuilder<List<ReviewsRecord>>(

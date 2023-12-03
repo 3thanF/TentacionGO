@@ -171,51 +171,60 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget>
             ),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
-              child: Container(
-                width: double.infinity,
-                height: 60.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  boxShadow: const [
-                    BoxShadow(
-                      blurRadius: 3.0,
-                      color: Color(0x33000000),
-                      offset: Offset(0.0, 1.0),
-                    )
-                  ],
-                  borderRadius: BorderRadius.circular(8.0),
-                  shape: BoxShape.rectangle,
-                ),
-                child: Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Icon(
-                        Icons.account_circle_outlined,
-                        color: FlutterFlowTheme.of(context).secondaryText,
-                        size: 24.0,
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                        child: Text(
-                          'Editar mi información personal',
-                          style: FlutterFlowTheme.of(context).labelLarge,
+              child: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed('informacionPersonal');
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: 60.0,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    boxShadow: const [
+                      BoxShadow(
+                        blurRadius: 3.0,
+                        color: Color(0x33000000),
+                        offset: Offset(0.0, 1.0),
+                      )
+                    ],
+                    borderRadius: BorderRadius.circular(8.0),
+                    shape: BoxShape.rectangle,
+                  ),
+                  child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Icon(
+                          Icons.account_circle_outlined,
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          size: 24.0,
                         ),
-                      ),
-                      Expanded(
-                        child: Align(
-                          alignment: const AlignmentDirectional(0.90, 0.00),
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 18.0,
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              12.0, 0.0, 0.0, 0.0),
+                          child: Text(
+                            'Editar mi información personal',
+                            style: FlutterFlowTheme.of(context).labelLarge,
                           ),
                         ),
-                      ),
-                    ],
+                        Expanded(
+                          child: Align(
+                            alignment: const AlignmentDirectional(0.90, 0.00),
+                            child: Icon(
+                              Icons.arrow_forward_ios,
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              size: 18.0,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

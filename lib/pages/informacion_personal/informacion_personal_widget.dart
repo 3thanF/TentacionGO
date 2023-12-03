@@ -7,44 +7,25 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'perfil_model.dart';
-export 'perfil_model.dart';
+import 'informacion_personal_model.dart';
+export 'informacion_personal_model.dart';
 
-class PerfilWidget extends StatefulWidget {
-  const PerfilWidget({super.key});
+class InformacionPersonalWidget extends StatefulWidget {
+  const InformacionPersonalWidget({super.key});
 
   @override
-  _PerfilWidgetState createState() => _PerfilWidgetState();
+  _InformacionPersonalWidgetState createState() =>
+      _InformacionPersonalWidgetState();
 }
 
-class _PerfilWidgetState extends State<PerfilWidget>
+class _InformacionPersonalWidgetState extends State<InformacionPersonalWidget>
     with TickerProviderStateMixin {
-  late PerfilModel _model;
+  late InformacionPersonalModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   final animationsMap = {
-    'buttonOnPageLoadAnimation1': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        VisibilityEffect(duration: 400.ms),
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 400.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 400.ms,
-          duration: 600.ms,
-          begin: const Offset(0.0, 60.0),
-          end: const Offset(0.0, 0.0),
-        ),
-      ],
-    ),
-    'buttonOnPageLoadAnimation2': AnimationInfo(
+    'buttonOnPageLoadAnimation': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
         VisibilityEffect(duration: 400.ms),
@@ -69,7 +50,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => PerfilModel());
+    _model = createModel(context, () => InformacionPersonalModel());
 
     setupAnimations(
       animationsMap.values.where((anim) =>
@@ -185,7 +166,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
               child: Text(
-                'Your Account',
+                'Tu perfil',
                 style: FlutterFlowTheme.of(context).labelMedium,
               ),
             ),
@@ -197,7 +178,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  context.pushNamed('Editar_Perfil');
+                  context.pushNamed('alergias');
                 },
                 child: Container(
                   width: double.infinity,
@@ -221,7 +202,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Icon(
-                          Icons.account_circle_outlined,
+                          Icons.health_and_safety,
                           color: FlutterFlowTheme.of(context).secondaryText,
                           size: 24.0,
                         ),
@@ -229,7 +210,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            'Edit Profile',
+                            'Alergias',
                             style: FlutterFlowTheme.of(context).labelLarge,
                           ),
                         ),
@@ -281,7 +262,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         child: Text(
-                          'Notification Settings',
+                          'Métodos de pago',
                           style: FlutterFlowTheme.of(context).labelLarge,
                         ),
                       ),
@@ -298,13 +279,6 @@ class _PerfilWidgetState extends State<PerfilWidget>
                     ],
                   ),
                 ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 0.0),
-              child: Text(
-                'App Settings',
-                style: FlutterFlowTheme.of(context).labelMedium,
               ),
             ),
             Padding(
@@ -339,7 +313,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         child: Text(
-                          'Support',
+                          'Soporte',
                           style: FlutterFlowTheme.of(context).labelLarge,
                         ),
                       ),
@@ -390,7 +364,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         child: Text(
-                          'Terms of Service',
+                          'Términos y condiciones',
                           style: FlutterFlowTheme.of(context).labelLarge,
                         ),
                       ),
@@ -415,13 +389,9 @@ class _PerfilWidgetState extends State<PerfilWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    GoRouter.of(context).prepareAuthEvent();
-                    await authManager.signOut();
-                    GoRouter.of(context).clearRedirectLocation();
-
-                    context.goNamedAuth('Login', context.mounted);
+                    context.safePop();
                   },
-                  text: 'Cerrar Sesión',
+                  text: 'Volver',
                   options: FFButtonOptions(
                     width: 150.0,
                     height: 44.0,
@@ -437,34 +407,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                     borderRadius: BorderRadius.circular(38.0),
                   ),
                 ).animateOnPageLoad(
-                    animationsMap['buttonOnPageLoadAnimation1']!),
-              ),
-            ),
-            Align(
-              alignment: const AlignmentDirectional(0.00, 0.00),
-              child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                child: FFButtonWidget(
-                  onPressed: () async {
-                    context.pushNamed('Home');
-                  },
-                  text: 'Volver al Inicio',
-                  options: FFButtonOptions(
-                    width: 150.0,
-                    height: 44.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primaryBackground,
-                    textStyle: FlutterFlowTheme.of(context).bodyMedium,
-                    elevation: 0.0,
-                    borderSide: const BorderSide(
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(38.0),
-                  ),
-                ).animateOnPageLoad(
-                    animationsMap['buttonOnPageLoadAnimation2']!),
+                    animationsMap['buttonOnPageLoadAnimation']!),
               ),
             ),
           ],
