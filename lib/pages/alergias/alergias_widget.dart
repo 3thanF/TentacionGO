@@ -328,21 +328,10 @@ class _AlergiasWidgetState extends State<AlergiasWidget>
                                                           children: [
                                                             Text(
                                                               listViewAlergiasRecord
-                                                                  .alergias
-                                                                  .sortedList(
-                                                                      (e) => e)
-                                                                  .length
-                                                                  .toString(),
+                                                                  .alergia,
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .headlineSmall,
-                                                            ),
-                                                            Divider(
-                                                              height: 24.0,
-                                                              thickness: 1.0,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .alternate,
                                                             ),
                                                           ],
                                                         ),

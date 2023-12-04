@@ -1,11 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_checkbox_group.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'marcar_alergias_model.dart';
@@ -27,6 +25,9 @@ class _MarcarAlergiasWidgetState extends State<MarcarAlergiasWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => MarcarAlergiasModel());
+
+    _model.txtAlergiaController ??= TextEditingController();
+    _model.txtAlergiaFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -81,11 +82,13 @@ class _MarcarAlergiasWidgetState extends State<MarcarAlergiasWidget> {
           top: true,
           child: Column(
             mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
@@ -120,7 +123,7 @@ class _MarcarAlergiasWidgetState extends State<MarcarAlergiasWidget> {
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 4.0, 16.0, 0.0),
                         child: Text(
-                          'Selecciona todas las alergias que padezcas',
+                          'Registra todas las alergías de las que padezcas o hayas padecido:',
                           style: FlutterFlowTheme.of(context).bodyLarge,
                         ),
                       ),
@@ -130,35 +133,81 @@ class _MarcarAlergiasWidgetState extends State<MarcarAlergiasWidget> {
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            FlutterFlowCheckboxGroup(
-                              options: const [
-                                'Alergia al Maní y Frutos Secos',
-                                'Alergia a los Mariscos',
-                                'Alergia a los Huevos',
-                                'Alergia a la Leche',
-                                'Alergia al Trigo',
-                                'Alergia a la Soja',
-                                'Alergia al Pescado',
-                                'Alergiaa Frutas y Verduras',
-                                'Alergia al Sésamo'
-                              ],
-                              onChanged: (val) => setState(
-                                  () => _model.checkboxGroupValues = val),
-                              controller:
-                                  _model.checkboxGroupValueController ??=
-                                      FormFieldController<List<String>>(
-                                [],
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  15.0, 15.0, 15.0, 15.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          8.0, 0.0, 8.0, 0.0),
+                                      child: TextFormField(
+                                        controller: _model.txtAlergiaController,
+                                        focusNode: _model.txtAlergiaFocusNode,
+                                        autofocus: true,
+                                        obscureText: false,
+                                        decoration: InputDecoration(
+                                          labelText: 'Tipo de Alergía',
+                                          labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
+                                          hintStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium,
+                                        validator: _model
+                                            .txtAlergiaControllerValidator
+                                            .asValidator(context),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
-                              activeColor: FlutterFlowTheme.of(context).primary,
-                              checkColor: Colors.white,
-                              checkboxBorderColor:
-                                  FlutterFlowTheme.of(context).secondaryText,
-                              textStyle:
-                                  FlutterFlowTheme.of(context).bodyMedium,
-                              itemPadding: const EdgeInsetsDirectional.fromSTEB(
-                                  8.0, 0.0, 0.0, 0.0),
-                              checkboxBorderRadius: BorderRadius.circular(4.0),
-                              initialized: _model.checkboxGroupValues != null,
                             ),
                           ],
                         ),
@@ -171,19 +220,15 @@ class _MarcarAlergiasWidgetState extends State<MarcarAlergiasWidget> {
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    await AlergiasRecord.collection.doc().set({
-                      ...createAlergiasRecordData(
-                        nombreUsuario: currentUserDisplayName,
-                        emailUsuario: currentUserEmail,
-                      ),
-                      ...mapToFirestore(
-                        {
-                          'alergias': _model.checkboxGroupValues,
-                        },
-                      ),
-                    });
+                    await AlergiasRecord.collection
+                        .doc()
+                        .set(createAlergiasRecordData(
+                          nombreUsuario: currentUserDisplayName,
+                          emailUsuario: currentUserEmail,
+                          alergia: _model.txtAlergiaController.text,
+                        ));
                   },
-                  text: 'Guardar',
+                  text: 'Registrar',
                   options: FFButtonOptions(
                     width: double.infinity,
                     height: 50.0,

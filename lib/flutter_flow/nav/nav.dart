@@ -205,6 +205,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'alergias',
           path: '/alergias',
           builder: (context, params) => const AlergiasWidget(),
+        ),
+        FFRoute(
+          name: 'misReservaciones',
+          path: '/misReservaciones',
+          builder: (context, params) => const MisReservacionesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

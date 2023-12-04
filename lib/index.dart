@@ -32,3 +32,5 @@ export '/pages/informacion_personal/informacion_personal_widget.dart'
 export '/pages/marcar_alergias/marcar_alergias_widget.dart'
     show MarcarAlergiasWidget;
 export '/pages/alergias/alergias_widget.dart' show AlergiasWidget;
+export '/pages/mis_reservaciones/mis_reservaciones_widget.dart'
+    show MisReservacionesWidget;

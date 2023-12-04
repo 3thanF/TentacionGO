@@ -25,15 +25,15 @@ class AlergiasRecord extends FirestoreRecord {
   String get emailUsuario => _emailUsuario ?? '';
   bool hasEmailUsuario() => _emailUsuario != null;
 
-  // "alergias" field.
-  List<String>? _alergias;
-  List<String> get alergias => _alergias ?? const [];
-  bool hasAlergias() => _alergias != null;
+  // "alergia" field.
+  String? _alergia;
+  String get alergia => _alergia ?? '';
+  bool hasAlergia() => _alergia != null;
 
   void _initializeFields() {
     _nombreUsuario = snapshotData['nombreUsuario'] as String?;
     _emailUsuario = snapshotData['emailUsuario'] as String?;
-    _alergias = getDataList(snapshotData['alergias']);
+    _alergia = snapshotData['alergia'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -73,11 +73,13 @@ class AlergiasRecord extends FirestoreRecord {
 Map<String, dynamic> createAlergiasRecordData({
   String? nombreUsuario,
   String? emailUsuario,
+  String? alergia,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'nombreUsuario': nombreUsuario,
       'emailUsuario': emailUsuario,
+      'alergia': alergia,
     }.withoutNulls,
   );
 
@@ -89,15 +91,14 @@ class AlergiasRecordDocumentEquality implements Equality<AlergiasRecord> {
 
   @override
   bool equals(AlergiasRecord? e1, AlergiasRecord? e2) {
-    const listEquality = ListEquality();
     return e1?.nombreUsuario == e2?.nombreUsuario &&
         e1?.emailUsuario == e2?.emailUsuario &&
-        listEquality.equals(e1?.alergias, e2?.alergias);
+        e1?.alergia == e2?.alergia;
   }
 
   @override
   int hash(AlergiasRecord? e) => const ListEquality()
-      .hash([e?.nombreUsuario, e?.emailUsuario, e?.alergias]);
+      .hash([e?.nombreUsuario, e?.emailUsuario, e?.alergia]);
 
   @override
   bool isValidKey(Object? o) => o is AlergiasRecord;

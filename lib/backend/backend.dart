@@ -14,6 +14,8 @@ import 'schema/desayuno_saludable_record.dart';
 import 'schema/almuerzo_saludable_record.dart';
 import 'schema/cena_saludable_record.dart';
 import 'schema/alergias_record.dart';
+import 'schema/reserva_eventos_record.dart';
+import 'schema/paginas_navegacion_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -30,6 +32,8 @@ export 'schema/desayuno_saludable_record.dart';
 export 'schema/almuerzo_saludable_record.dart';
 export 'schema/cena_saludable_record.dart';
 export 'schema/alergias_record.dart';
+export 'schema/reserva_eventos_record.dart';
+export 'schema/paginas_navegacion_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -359,6 +363,80 @@ Future<List<AlergiasRecord>> queryAlergiasRecordOnce({
     queryCollectionOnce(
       AlergiasRecord.collection,
       AlergiasRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query ReservaEventosRecords (as a Stream and as a Future).
+Future<int> queryReservaEventosRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      ReservaEventosRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<ReservaEventosRecord>> queryReservaEventosRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      ReservaEventosRecord.collection,
+      ReservaEventosRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<ReservaEventosRecord>> queryReservaEventosRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      ReservaEventosRecord.collection,
+      ReservaEventosRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query PaginasNavegacionRecords (as a Stream and as a Future).
+Future<int> queryPaginasNavegacionRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      PaginasNavegacionRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<PaginasNavegacionRecord>> queryPaginasNavegacionRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      PaginasNavegacionRecord.collection,
+      PaginasNavegacionRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<PaginasNavegacionRecord>> queryPaginasNavegacionRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      PaginasNavegacionRecord.collection,
+      PaginasNavegacionRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
