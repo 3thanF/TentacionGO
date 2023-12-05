@@ -111,7 +111,7 @@ class _MenuKidsWidgetState extends State<MenuKidsWidget>
                           context.safePop();
                         },
                         child: Icon(
-                          Icons.arrow_back,
+                          Icons.chevron_left,
                           color: FlutterFlowTheme.of(context).secondaryText,
                           size: 30.0,
                         ),
@@ -352,55 +352,6 @@ class _MenuKidsWidgetState extends State<MenuKidsWidget>
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium,
-                                                                  ),
-                                                                ),
-                                                                InkWell(
-                                                                  splashColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  focusColor: Colors
-                                                                      .transparent,
-                                                                  hoverColor: Colors
-                                                                      .transparent,
-                                                                  highlightColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  onTap:
-                                                                      () async {
-                                                                    context.pushNamed(
-                                                                        'Huevos_Mexicanos');
-                                                                  },
-                                                                  child:
-                                                                      Container(
-                                                                    width:
-                                                                        100.0,
-                                                                    height:
-                                                                        32.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondary,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              32.0),
-                                                                    ),
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.00,
-                                                                            0.00),
-                                                                    child: Text(
-                                                                      'Comprar',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Plus Jakarta Sans',
-                                                                            color:
-                                                                                Colors.white,
-                                                                          ),
-                                                                    ),
                                                                   ),
                                                                 ),
                                                               ],

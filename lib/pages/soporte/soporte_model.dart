@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'editar_perfil_widget.dart' show EditarPerfilWidget;
+import 'soporte_widget.dart' show SoporteWidget;
 import 'package:flutter/material.dart';
 
-class EditarPerfilModel extends FlutterFlowModel<EditarPerfilWidget> {
+class SoporteModel extends FlutterFlowModel<SoporteWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

@@ -51,9 +51,6 @@ class _InformacionPagoMesasWidgetState extends State<InformacionPagoMesasWidget>
     super.initState();
     _model = createModel(context, () => InformacionPagoMesasModel());
 
-    _model.txtmontoController ??= TextEditingController();
-    _model.txtmontoFocusNode ??= FocusNode();
-
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -98,7 +95,7 @@ class _InformacionPagoMesasWidgetState extends State<InformacionPagoMesasWidget>
             borderWidth: 1.0,
             buttonSize: 60.0,
             icon: Icon(
-              Icons.arrow_back_rounded,
+              Icons.chevron_left,
               color: FlutterFlowTheme.of(context).primaryText,
               size: 30.0,
             ),
@@ -159,59 +156,15 @@ class _InformacionPagoMesasWidgetState extends State<InformacionPagoMesasWidget>
                   ],
                 ),
               ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                      child: TextFormField(
-                        controller: _model.txtmontoController,
-                        focusNode: _model.txtmontoFocusNode,
-                        autofocus: true,
-                        readOnly: true,
-                        obscureText: false,
-                        decoration: InputDecoration(
-                          labelText: '11540',
-                          labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                          hintStyle: FlutterFlowTheme.of(context).labelMedium,
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).primary,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          errorBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).error,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          focusedErrorBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).error,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.txtmontoControllerValidator
-                            .asValidator(context),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
+                child: Text(
+                  '₡11.540',
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Plus Jakarta Sans',
+                        fontSize: 34.0,
                       ),
-                    ),
-                  ),
-                ],
+                ),
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
@@ -333,6 +286,19 @@ class _InformacionPagoMesasWidgetState extends State<InformacionPagoMesasWidget>
                 ),
               ),
               Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      dateTimeFormat('d/M h:mm a', _model.datePicked),
+                      style: FlutterFlowTheme.of(context).bodyMedium,
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
                 child: Text(
                   'Información Adicional:',
@@ -428,10 +394,6 @@ class _InformacionPagoMesasWidgetState extends State<InformacionPagoMesasWidget>
                         'fecha': serializeParam(
                           _model.datePicked,
                           ParamType.DateTime,
-                        ),
-                        'monto': serializeParam(
-                          int.tryParse(_model.txtmontoController.text),
-                          ParamType.int,
                         ),
                       }.withoutNulls,
                     );

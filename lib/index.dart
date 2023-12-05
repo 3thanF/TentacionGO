@@ -17,7 +17,6 @@ export '/pages/risotto/risotto_widget.dart' show RisottoWidget;
 export '/pages/filet_mignon/filet_mignon_widget.dart' show FiletMignonWidget;
 export '/pages/salmon/salmon_widget.dart' show SalmonWidget;
 export '/pages/perfil/perfil_widget.dart' show PerfilWidget;
-export '/pages/editar_perfil/editar_perfil_widget.dart' show EditarPerfilWidget;
 export '/pages/ubicacion/ubicacion_widget.dart' show UbicacionWidget;
 export '/pages/reviews/reviews_widget.dart' show ReviewsWidget;
 export '/pages/politicas/politicas_widget.dart' show PoliticasWidget;
@@ -34,3 +33,4 @@ export '/pages/marcar_alergias/marcar_alergias_widget.dart'
 export '/pages/alergias/alergias_widget.dart' show AlergiasWidget;
 export '/pages/mis_reservaciones/mis_reservaciones_widget.dart'
     show MisReservacionesWidget;
+export '/pages/soporte/soporte_widget.dart' show SoporteWidget;

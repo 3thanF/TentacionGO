@@ -1,9 +1,11 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'confirmacion_pago_reservacion_model.dart';
 export 'confirmacion_pago_reservacion_model.dart';
@@ -13,12 +15,10 @@ class ConfirmacionPagoReservacionWidget extends StatefulWidget {
     super.key,
     required this.nombre,
     required this.fecha,
-    required this.monto,
   });
 
   final String? nombre;
   final DateTime? fecha;
-  final int? monto;
 
   @override
   _ConfirmacionPagoReservacionWidgetState createState() =>
@@ -35,6 +35,18 @@ class _ConfirmacionPagoReservacionWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => ConfirmacionPagoReservacionModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await ReservaMesasRecord.collection
+          .doc()
+          .set(createReservaMesasRecordData(
+            nombre: currentUserDisplayName,
+            fecha: widget.fecha,
+            monto: 11540,
+            correoElectronico: currentUserEmail,
+          ));
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -123,10 +135,7 @@ class _ConfirmacionPagoReservacionWidgetState
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
               child: Text(
-                valueOrDefault<String>(
-                  widget.monto?.toString(),
-                  '0',
-                ),
+                '₡11.540',
                 style: FlutterFlowTheme.of(context).displayLarge.override(
                       fontFamily: 'Urbanist',
                       color: FlutterFlowTheme.of(context).primaryText,
@@ -136,7 +145,7 @@ class _ConfirmacionPagoReservacionWidgetState
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(24.0, 8.0, 24.0, 0.0),
               child: Text(
-                'El pago ha sido realizado con éxito, los montos pueden tardar en verse reflejados en su cuenta bancaria dependiendo cual entidad sea con la que usted esté asociado/a.',
+                'El pago ha sido realizado con éxito.',
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).labelLarge,
               ),
@@ -188,10 +197,7 @@ class _ConfirmacionPagoReservacionWidgetState
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 4.0),
                               child: Text(
-                                valueOrDefault<String>(
-                                  widget.monto?.toString(),
-                                  '0',
-                                ),
+                                '₡11.540',
                                 style: FlutterFlowTheme.of(context).labelMedium,
                               ),
                             ),

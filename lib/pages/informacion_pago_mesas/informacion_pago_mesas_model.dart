@@ -7,10 +7,6 @@ class InformacionPagoMesasModel
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // State field(s) for txtmonto widget.
-  FocusNode? txtmontoFocusNode;
-  TextEditingController? txtmontoController;
-  String? Function(BuildContext, String?)? txtmontoControllerValidator;
   DateTime? datePicked;
 
   /// Initialization and disposal methods.
@@ -21,8 +17,6 @@ class InformacionPagoMesasModel
   @override
   void dispose() {
     unfocusNode.dispose();
-    txtmontoFocusNode?.dispose();
-    txtmontoController?.dispose();
   }
 
   /// Action blocks are added here.

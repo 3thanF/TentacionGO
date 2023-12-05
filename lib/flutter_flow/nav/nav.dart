@@ -107,7 +107,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => ConfirmacionPagoReservacionWidget(
             nombre: params.getParam('nombre', ParamType.String),
             fecha: params.getParam('fecha', ParamType.DateTime),
-            monto: params.getParam('monto', ParamType.int),
           ),
         ),
         FFRoute(
@@ -149,11 +148,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Perfil',
           path: '/perfil',
           builder: (context, params) => const PerfilWidget(),
-        ),
-        FFRoute(
-          name: 'Editar_Perfil',
-          path: '/editarPerfil',
-          builder: (context, params) => const EditarPerfilWidget(),
         ),
         FFRoute(
           name: 'Ubicacion',
@@ -210,6 +204,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'misReservaciones',
           path: '/misReservaciones',
           builder: (context, params) => const MisReservacionesWidget(),
+        ),
+        FFRoute(
+          name: 'Soporte',
+          path: '/soporte',
+          builder: (context, params) => const SoporteWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

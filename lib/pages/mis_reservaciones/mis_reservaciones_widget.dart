@@ -61,7 +61,7 @@ class _MisReservacionesWidgetState extends State<MisReservacionesWidget> {
             borderWidth: 1.0,
             buttonSize: 60.0,
             icon: const Icon(
-              Icons.arrow_back_rounded,
+              Icons.chevron_left,
               color: Colors.white,
               size: 30.0,
             ),

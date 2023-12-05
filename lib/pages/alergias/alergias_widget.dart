@@ -113,7 +113,7 @@ class _AlergiasWidgetState extends State<AlergiasWidget>
                           context.safePop();
                         },
                         child: Icon(
-                          Icons.arrow_back,
+                          Icons.chevron_left,
                           color: FlutterFlowTheme.of(context).secondaryText,
                           size: 30.0,
                         ),

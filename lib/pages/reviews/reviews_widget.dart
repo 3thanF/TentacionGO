@@ -58,7 +58,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
           borderRadius: 30.0,
           buttonSize: 46.0,
           icon: Icon(
-            Icons.arrow_back_rounded,
+            Icons.chevron_left,
             color: FlutterFlowTheme.of(context).secondaryText,
             size: 24.0,
           ),
