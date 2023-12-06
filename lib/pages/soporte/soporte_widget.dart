@@ -1,6 +1,5 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'soporte_model.dart';
@@ -69,87 +68,172 @@ class _SoporteWidgetState extends State<SoporteWidget> {
                     ).image,
                   ),
                 ),
-                child: Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: Container(
-                          width: double.infinity,
-                          height: 488.0,
-                          decoration: BoxDecoration(
-                            boxShadow: const [
-                              BoxShadow(
-                                blurRadius: 4.0,
-                                color: Color(0x49000000),
-                                offset: Offset(0.0, 2.0),
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(10.0),
-                            shape: BoxShape.rectangle,
-                          ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
+                child: Container(
+                  width: 100.0,
+                  height: 100.0,
+                  decoration: const BoxDecoration(
+                    color: Color(0x5F000000),
+                  ),
+                  child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(20.0, 70.0, 20.0, 20.0),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
                             children: [
-                              Text(
-                                'Contáctanos\nRestaurante Tentación\n\n¡Nos encantaría escuchar tus comentarios, preguntas o sugerencias! Utiliza las siguientes opciones para contactarnos:\n\nLlámanos:\nPara reservas o consultas inmediatas, llámanos al:\n+506 1234 5678\n\nEnvíanos un Email:\nPara comentarios o preguntas generales, envíanos un email a:\ncontacto@tentacion.cr\n\nVisítanos:\nVen a nuestro restaurante en:\nQuepos, Costa Rica\n\nHorario:\nLunes a Domingo: 7:00 a.m. - 10:00 p.m.\n\nSíguenos en Redes Sociales:\n\nFacebook: Restaurante Tentación\nInstagram: @TentacionQuepos\n',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Plus Jakarta Sans',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                              ),
-                              Column(
-                                mainAxisSize: MainAxisSize.min,
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        15.0, 70.0, 15.0, 15.0),
-                                    child: FFButtonWidget(
-                                      onPressed: () async {
-                                        context.safePop();
-                                      },
-                                      text: 'Volver',
-                                      options: FFButtonOptions(
-                                        height: 40.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            24.0, 0.0, 24.0, 0.0),
-                                        iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Plus Jakarta Sans',
-                                              color: Colors.white,
-                                            ),
-                                        elevation: 3.0,
-                                        borderSide: const BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                      ),
-                                    ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 20.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.safePop();
+                                  },
+                                  child: Icon(
+                                    Icons.chevron_left,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    size: 44.0,
                                   ),
-                                ],
+                                ),
                               ),
                             ],
                           ),
-                        ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 15.0),
+                            child: Text(
+                              'Tentación - Contacto',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Plus Jakarta Sans',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    fontSize: 34.0,
+                                  ),
+                            ),
+                          ),
+                          RichText(
+                            textScaleFactor:
+                                MediaQuery.of(context).textScaleFactor,
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text:
+                                      '¡Nos encantaría escuchar de ti! Ya sea para reservaciones, consultas o comentarios, estamos aquí para atenderte.',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Plus Jakarta Sans',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                                TextSpan(
+                                  text: '\n\nDirección:\n',
+                                  style: TextStyle(
+                                    color: FlutterFlowTheme.of(context).warning,
+                                    fontSize: 20.0,
+                                  ),
+                                ),
+                                TextSpan(
+                                  text:
+                                      'Quepos, Puntarenas, Costa Rica, 60601.\n\n',
+                                  style: TextStyle(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                  ),
+                                ),
+                                TextSpan(
+                                  text: 'Teléfono:\n',
+                                  style: TextStyle(
+                                    color: FlutterFlowTheme.of(context).warning,
+                                    fontSize: 20.0,
+                                  ),
+                                ),
+                                const TextSpan(
+                                  text: '(+506) 1234 - 5678\n\n',
+                                  style: TextStyle(),
+                                ),
+                                TextSpan(
+                                  text: 'Correo Electrónico:\n',
+                                  style: TextStyle(
+                                    color: FlutterFlowTheme.of(context).warning,
+                                    fontSize: 20.0,
+                                  ),
+                                ),
+                                const TextSpan(
+                                  text: 'contacto@tentacion.com\n\n',
+                                  style: TextStyle(),
+                                ),
+                                TextSpan(
+                                  text: 'Horarios de Atención:\n',
+                                  style: TextStyle(
+                                    color: FlutterFlowTheme.of(context).warning,
+                                    fontSize: 20.0,
+                                  ),
+                                ),
+                                const TextSpan(
+                                  text: 'Lunes a Domingo: 7:00AM - 10:00PM\n\n',
+                                  style: TextStyle(),
+                                ),
+                                TextSpan(
+                                  text: 'Reservaciones:\n',
+                                  style: TextStyle(
+                                    color: FlutterFlowTheme.of(context).warning,
+                                    fontSize: 20.0,
+                                  ),
+                                ),
+                                const TextSpan(
+                                  text:
+                                      'Para reservar tu mesa, llámanos o escríbenos un correo electrónico. ¡Asegúrate de especificar la fecha, hora y número de personas!\n\n',
+                                  style: TextStyle(),
+                                ),
+                                TextSpan(
+                                  text: 'Eventos Especiales o Privados:\n',
+                                  style: TextStyle(
+                                    color: FlutterFlowTheme.of(context).warning,
+                                    fontSize: 20.0,
+                                  ),
+                                ),
+                                const TextSpan(
+                                  text:
+                                      'Si estás interesado en organizar un evento especial o reservar nuestro espacio para un evento privado, contáctanos para más detalles y opciones personalizadas.\n\n',
+                                  style: TextStyle(),
+                                ),
+                                TextSpan(
+                                  text: 'Síguenos en Redes Sociales:\n',
+                                  style: TextStyle(
+                                    color: FlutterFlowTheme.of(context).warning,
+                                    fontSize: 20.0,
+                                  ),
+                                ),
+                                const TextSpan(
+                                  text:
+                                      'Facebook: Tentacion Quepos\nInstagram: @tentacionQuepos',
+                                  style: TextStyle(),
+                                ),
+                                const TextSpan(
+                                  text:
+                                      '\n\n¡Te esperamos en Tentación para ofrecerte una experiencia culinaria inolvidable!',
+                                  style: TextStyle(),
+                                )
+                              ],
+                              style: FlutterFlowTheme.of(context).bodyMedium,
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ),

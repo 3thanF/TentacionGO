@@ -225,7 +225,7 @@ class _PoliticasWidgetState extends State<PoliticasWidget> {
                                 ),
                                 const TextSpan(
                                   text:
-                                      '\n\nEl restaurante opera de martes a domingo, de 9:00 AM a 10:00 PM.\nLos lunes el restaurante permanece cerrado por mantenimiento.',
+                                      '\n\nEl restaurante opera de martes a domingo, de 7:00 AM a 10:00 PM.',
                                   style: TextStyle(),
                                 ),
                                 TextSpan(
