@@ -138,7 +138,8 @@ class _MisReservacionesWidgetState extends State<MisReservacionesWidget> {
                                   15.0, 15.0, 15.0, 15.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   RichText(
                                     textScaleFactor:
@@ -163,7 +164,7 @@ class _MisReservacionesWidgetState extends State<MisReservacionesWidget> {
                                           style: const TextStyle(),
                                         ),
                                         const TextSpan(
-                                          text: '\n\nPara la fecha: ',
+                                          text: '\n\nSolicitada en la fecha: ',
                                           style: TextStyle(),
                                         ),
                                         TextSpan(
@@ -176,6 +177,23 @@ class _MisReservacionesWidgetState extends State<MisReservacionesWidget> {
                                       ],
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
+                                    ),
+                                  ),
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      await listViewReservaEventosRecord
+                                          .reference
+                                          .delete();
+                                    },
+                                    child: Icon(
+                                      Icons.delete_forever,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 24.0,
                                     ),
                                   ),
                                 ],

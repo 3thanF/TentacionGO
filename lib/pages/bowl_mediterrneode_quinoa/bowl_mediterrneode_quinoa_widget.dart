@@ -1,30 +1,30 @@
-import '/flutter_flow/flutter_flow_checkbox_group.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'paella_model.dart';
-export 'paella_model.dart';
+import 'bowl_mediterrneode_quinoa_model.dart';
+export 'bowl_mediterrneode_quinoa_model.dart';
 
-class PaellaWidget extends StatefulWidget {
-  const PaellaWidget({super.key});
+class BowlMediterrneodeQuinoaWidget extends StatefulWidget {
+  const BowlMediterrneodeQuinoaWidget({super.key});
 
   @override
-  _PaellaWidgetState createState() => _PaellaWidgetState();
+  _BowlMediterrneodeQuinoaWidgetState createState() =>
+      _BowlMediterrneodeQuinoaWidgetState();
 }
 
-class _PaellaWidgetState extends State<PaellaWidget> {
-  late PaellaModel _model;
+class _BowlMediterrneodeQuinoaWidgetState
+    extends State<BowlMediterrneodeQuinoaWidget> {
+  late BowlMediterrneodeQuinoaModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => PaellaModel());
+    _model = createModel(context, () => BowlMediterrneodeQuinoaModel());
 
     _model.txtMontoController ??= TextEditingController();
     _model.txtMontoFocusNode ??= FocusNode();
@@ -95,10 +95,10 @@ class _PaellaWidgetState extends State<PaellaWidget> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.network(
-                            'https://images.pexels.com/photos/12419160/pexels-photo-12419160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                            'https://i.pinimg.com/564x/fa/56/df/fa56df2c97158a4c8181428d059ee8db.jpg',
                             width: double.infinity,
                             height: 230.0,
-                            fit: BoxFit.cover,
+                            fit: BoxFit.fill,
                           ),
                         ),
                       ),
@@ -106,7 +106,7 @@ class _PaellaWidgetState extends State<PaellaWidget> {
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 0.0, 0.0),
                         child: Text(
-                          'Paella Valenciana',
+                          'Bowl Mediterráneo de Quinoa',
                           style: FlutterFlowTheme.of(context).headlineMedium,
                         ),
                       ),
@@ -119,7 +119,7 @@ class _PaellaWidgetState extends State<PaellaWidget> {
                           readOnly: true,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: '₡4.000',
+                            labelText: '₡4.500',
                             labelStyle:
                                 FlutterFlowTheme.of(context).labelMedium,
                             hintStyle: FlutterFlowTheme.of(context).labelMedium,
@@ -177,134 +177,8 @@ class _PaellaWidgetState extends State<PaellaWidget> {
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 4.0, 16.0, 0.0),
                         child: Text(
-                          'Deliciosa paella hecha con ingredientes frescos y de la mejor calidad, dispone de acompañamientos para el gusto del cliente.',
+                          'Quinoa, tomates cherry, pepino, aceitunas negras, queso feta.',
                           style: FlutterFlowTheme.of(context).bodyLarge,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 8.0, 16.0, 0.0),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 8.0, 0.0, 8.0),
-                              child: Container(
-                                width: double.infinity,
-                                height: 40.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                                alignment: const AlignmentDirectional(-0.90, 0.00),
-                                child: Text(
-                                  'Acompañamiento principal',
-                                  style:
-                                      FlutterFlowTheme.of(context).labelMedium,
-                                ),
-                              ),
-                            ),
-                            FlutterFlowCheckboxGroup(
-                              options: const ['Papas', 'Ensalada', 'Verduras'],
-                              onChanged: (val) => setState(
-                                  () => _model.checkboxGroupValues1 = val),
-                              controller:
-                                  _model.checkboxGroupValueController1 ??=
-                                      FormFieldController<List<String>>(
-                                [],
-                              ),
-                              activeColor: FlutterFlowTheme.of(context).primary,
-                              checkColor: Colors.white,
-                              checkboxBorderColor:
-                                  FlutterFlowTheme.of(context).secondaryText,
-                              textStyle:
-                                  FlutterFlowTheme.of(context).bodyMedium,
-                              itemPadding: const EdgeInsetsDirectional.fromSTEB(
-                                  8.0, 0.0, 0.0, 0.0),
-                              checkboxBorderRadius: BorderRadius.circular(4.0),
-                              initialized: _model.checkboxGroupValues1 != null,
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 8.0, 0.0, 8.0),
-                              child: Container(
-                                width: double.infinity,
-                                height: 40.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                                alignment: const AlignmentDirectional(-0.90, 0.00),
-                                child: Text(
-                                  'Mariscos',
-                                  style:
-                                      FlutterFlowTheme.of(context).labelMedium,
-                                ),
-                              ),
-                            ),
-                            FlutterFlowCheckboxGroup(
-                              options: const ['Si', 'No'],
-                              onChanged: (val) => setState(
-                                  () => _model.checkboxGroupValues2 = val),
-                              controller:
-                                  _model.checkboxGroupValueController2 ??=
-                                      FormFieldController<List<String>>(
-                                [],
-                              ),
-                              activeColor: FlutterFlowTheme.of(context).primary,
-                              checkColor: Colors.white,
-                              checkboxBorderColor:
-                                  FlutterFlowTheme.of(context).secondaryText,
-                              textStyle:
-                                  FlutterFlowTheme.of(context).bodyMedium,
-                              itemPadding: const EdgeInsetsDirectional.fromSTEB(
-                                  8.0, 0.0, 0.0, 0.0),
-                              checkboxBorderRadius: BorderRadius.circular(4.0),
-                              initialized: _model.checkboxGroupValues2 != null,
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 8.0, 0.0, 8.0),
-                              child: Container(
-                                width: double.infinity,
-                                height: 40.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                                alignment: const AlignmentDirectional(-0.90, 0.00),
-                                child: Text(
-                                  'Eliga para cuantas personas',
-                                  style:
-                                      FlutterFlowTheme.of(context).labelMedium,
-                                ),
-                              ),
-                            ),
-                            FlutterFlowCheckboxGroup(
-                              options: const ['1', '2', '3 o más'],
-                              onChanged: (val) => setState(
-                                  () => _model.checkboxGroupValues3 = val),
-                              controller:
-                                  _model.checkboxGroupValueController3 ??=
-                                      FormFieldController<List<String>>(
-                                [],
-                              ),
-                              activeColor: FlutterFlowTheme.of(context).primary,
-                              checkColor: Colors.white,
-                              checkboxBorderColor:
-                                  FlutterFlowTheme.of(context).secondaryText,
-                              textStyle:
-                                  FlutterFlowTheme.of(context).bodyMedium,
-                              itemPadding: const EdgeInsetsDirectional.fromSTEB(
-                                  8.0, 0.0, 0.0, 0.0),
-                              checkboxBorderRadius: BorderRadius.circular(4.0),
-                              initialized: _model.checkboxGroupValues3 != null,
-                            ),
-                          ],
                         ),
                       ),
                     ],
@@ -321,7 +195,7 @@ class _PaellaWidgetState extends State<PaellaWidget> {
                         'monto': serializeParam(
                           valueOrDefault<String>(
                             _model.txtMontoController.text,
-                            '₡4.000',
+                            '₡4.500',
                           ),
                           ParamType.String,
                         ),

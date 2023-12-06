@@ -26,6 +26,9 @@ class _SandwichDesayunoWidgetState extends State<SandwichDesayunoWidget> {
     super.initState();
     _model = createModel(context, () => SandwichDesayunoModel());
 
+    _model.txtMontoController ??= TextEditingController();
+    _model.txtMontoFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -109,10 +112,50 @@ class _SandwichDesayunoWidgetState extends State<SandwichDesayunoWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 0.0, 0.0),
-                        child: Text(
-                          '₡3.800',
-                          style: FlutterFlowTheme.of(context).labelLarge,
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                        child: TextFormField(
+                          controller: _model.txtMontoController,
+                          focusNode: _model.txtMontoFocusNode,
+                          readOnly: true,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: '₡3.800',
+                            labelStyle:
+                                FlutterFlowTheme.of(context).labelMedium,
+                            hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).alternate,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).primary,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            errorBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).error,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedErrorBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).error,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            filled: true,
+                          ),
+                          style: FlutterFlowTheme.of(context).bodyMedium,
+                          validator: _model.txtMontoControllerValidator
+                              .asValidator(context),
                         ),
                       ),
                       Divider(
@@ -275,8 +318,19 @@ class _SandwichDesayunoWidgetState extends State<SandwichDesayunoWidget> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    context.pushNamed(
+                      'PagoPlatos',
+                      queryParameters: {
+                        'monto': serializeParam(
+                          valueOrDefault<String>(
+                            _model.txtMontoController.text,
+                            '₡3.800',
+                          ),
+                          ParamType.String,
+                        ),
+                      }.withoutNulls,
+                    );
                   },
                   text: 'Pagar',
                   options: FFButtonOptions(

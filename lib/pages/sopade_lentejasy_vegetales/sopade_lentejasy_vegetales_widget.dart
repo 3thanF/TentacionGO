@@ -1,33 +1,33 @@
-import '/flutter_flow/flutter_flow_checkbox_group.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'salmon_model.dart';
-export 'salmon_model.dart';
+import 'sopade_lentejasy_vegetales_model.dart';
+export 'sopade_lentejasy_vegetales_model.dart';
 
-class SalmonWidget extends StatefulWidget {
-  const SalmonWidget({super.key});
+class SopadeLentejasyVegetalesWidget extends StatefulWidget {
+  const SopadeLentejasyVegetalesWidget({super.key});
 
   @override
-  _SalmonWidgetState createState() => _SalmonWidgetState();
+  _SopadeLentejasyVegetalesWidgetState createState() =>
+      _SopadeLentejasyVegetalesWidgetState();
 }
 
-class _SalmonWidgetState extends State<SalmonWidget> {
-  late SalmonModel _model;
+class _SopadeLentejasyVegetalesWidgetState
+    extends State<SopadeLentejasyVegetalesWidget> {
+  late SopadeLentejasyVegetalesModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => SalmonModel());
+    _model = createModel(context, () => SopadeLentejasyVegetalesModel());
 
-    _model.txtMontoController ??= TextEditingController();
-    _model.txtMontoFocusNode ??= FocusNode();
+    _model.textController ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -95,7 +95,7 @@ class _SalmonWidgetState extends State<SalmonWidget> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.network(
-                            'https://images.pexels.com/photos/842142/pexels-photo-842142.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                            'https://i.pinimg.com/564x/e2/a1/b2/e2a1b29e6558952746d09a4b33078860.jpg',
                             width: double.infinity,
                             height: 230.0,
                             fit: BoxFit.cover,
@@ -106,7 +106,7 @@ class _SalmonWidgetState extends State<SalmonWidget> {
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 0.0, 0.0),
                         child: Text(
-                          'Salmón al Horno con Heneldo y Limón',
+                          'Sopa de Lentejas y Vegetales',
                           style: FlutterFlowTheme.of(context).headlineMedium,
                         ),
                       ),
@@ -114,12 +114,12 @@ class _SalmonWidgetState extends State<SalmonWidget> {
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                         child: TextFormField(
-                          controller: _model.txtMontoController,
-                          focusNode: _model.txtMontoFocusNode,
+                          controller: _model.textController,
+                          focusNode: _model.textFieldFocusNode,
                           readOnly: true,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: '₡7.000',
+                            labelText: '₡3.800',
                             labelStyle:
                                 FlutterFlowTheme.of(context).labelMedium,
                             hintStyle: FlutterFlowTheme.of(context).labelMedium,
@@ -154,7 +154,7 @@ class _SalmonWidgetState extends State<SalmonWidget> {
                             filled: true,
                           ),
                           style: FlutterFlowTheme.of(context).bodyMedium,
-                          validator: _model.txtMontoControllerValidator
+                          validator: _model.textControllerValidator
                               .asValidator(context),
                         ),
                       ),
@@ -177,95 +177,8 @@ class _SalmonWidgetState extends State<SalmonWidget> {
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 4.0, 16.0, 0.0),
                         child: Text(
-                          'Salmón cocinado al horno con heneldo y limón.',
+                          'Lentejas, zanahoria, apio, tomate y cebolla.',
                           style: FlutterFlowTheme.of(context).bodyLarge,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 8.0, 16.0, 0.0),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 8.0, 0.0, 8.0),
-                              child: Container(
-                                width: double.infinity,
-                                height: 40.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                                alignment: const AlignmentDirectional(-0.90, 0.00),
-                                child: Text(
-                                  'Henaldo',
-                                  style:
-                                      FlutterFlowTheme.of(context).labelMedium,
-                                ),
-                              ),
-                            ),
-                            FlutterFlowCheckboxGroup(
-                              options: const ['Si', 'No'],
-                              onChanged: (val) => setState(
-                                  () => _model.checkboxGroupValues1 = val),
-                              controller:
-                                  _model.checkboxGroupValueController1 ??=
-                                      FormFieldController<List<String>>(
-                                [],
-                              ),
-                              activeColor: FlutterFlowTheme.of(context).primary,
-                              checkColor: Colors.white,
-                              checkboxBorderColor:
-                                  FlutterFlowTheme.of(context).secondaryText,
-                              textStyle:
-                                  FlutterFlowTheme.of(context).bodyMedium,
-                              itemPadding: const EdgeInsetsDirectional.fromSTEB(
-                                  8.0, 0.0, 0.0, 0.0),
-                              checkboxBorderRadius: BorderRadius.circular(4.0),
-                              initialized: _model.checkboxGroupValues1 != null,
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 8.0, 0.0, 8.0),
-                              child: Container(
-                                width: double.infinity,
-                                height: 40.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                                alignment: const AlignmentDirectional(-0.90, 0.00),
-                                child: Text(
-                                  'Limón',
-                                  style:
-                                      FlutterFlowTheme.of(context).labelMedium,
-                                ),
-                              ),
-                            ),
-                            FlutterFlowCheckboxGroup(
-                              options: const ['Si', 'No'],
-                              onChanged: (val) => setState(
-                                  () => _model.checkboxGroupValues2 = val),
-                              controller:
-                                  _model.checkboxGroupValueController2 ??=
-                                      FormFieldController<List<String>>(
-                                [],
-                              ),
-                              activeColor: FlutterFlowTheme.of(context).primary,
-                              checkColor: Colors.white,
-                              checkboxBorderColor:
-                                  FlutterFlowTheme.of(context).secondaryText,
-                              textStyle:
-                                  FlutterFlowTheme.of(context).bodyMedium,
-                              itemPadding: const EdgeInsetsDirectional.fromSTEB(
-                                  8.0, 0.0, 0.0, 0.0),
-                              checkboxBorderRadius: BorderRadius.circular(4.0),
-                              initialized: _model.checkboxGroupValues2 != null,
-                            ),
-                          ],
                         ),
                       ),
                     ],
@@ -281,8 +194,8 @@ class _SalmonWidgetState extends State<SalmonWidget> {
                       queryParameters: {
                         'monto': serializeParam(
                           valueOrDefault<String>(
-                            _model.txtMontoController.text,
-                            '₡7.000',
+                            _model.textController.text,
+                            '₡3.800',
                           ),
                           ParamType.String,
                         ),

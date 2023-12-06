@@ -171,16 +171,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               const InformacionParaReservacionesDeEventosWidget(),
         ),
         FFRoute(
-          name: 'menuKids',
-          path: '/menuKids',
-          builder: (context, params) => const MenuKidsWidget(),
-        ),
-        FFRoute(
-          name: 'menuSaludable',
-          path: '/menuSaludable',
-          builder: (context, params) => const MenuSaludableWidget(),
-        ),
-        FFRoute(
           name: 'crearReview',
           path: '/crearReview',
           builder: (context, params) => const CrearReviewWidget(),
@@ -209,6 +199,73 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Soporte',
           path: '/soporte',
           builder: (context, params) => const SoporteWidget(),
+        ),
+        FFRoute(
+          name: 'MiniSandwichDivertido',
+          path: '/miniSandwichDivertido',
+          builder: (context, params) => const MiniSandwichDivertidoWidget(),
+        ),
+        FFRoute(
+          name: 'TortitasFelices',
+          path: '/tortitasFelices',
+          builder: (context, params) => const TortitasFelicesWidget(),
+        ),
+        FFRoute(
+          name: 'MiniHamburguesasAventureras',
+          path: '/miniHamburguesasAventureras',
+          builder: (context, params) => const MiniHamburguesasAventurerasWidget(),
+        ),
+        FFRoute(
+          name: 'BarquitosdePescadoyTesorodeMaz',
+          path: '/barquitosdePescadoyTesorodeMaz',
+          builder: (context, params) => const BarquitosdePescadoyTesorodeMazWidget(),
+        ),
+        FFRoute(
+          name: 'EstrellasdePolloenelJardn',
+          path: '/estrellasdePolloenelJardn',
+          builder: (context, params) => const EstrellasdePolloenelJardnWidget(),
+        ),
+        FFRoute(
+          name: 'PizzadeSueos',
+          path: '/pizzadeSueos',
+          builder: (context, params) => const PizzadeSueosWidget(),
+        ),
+        FFRoute(
+          name: 'AvenadeManzanayCanela',
+          path: '/avenadeManzanayCanela',
+          builder: (context, params) => const AvenadeManzanayCanelaWidget(),
+        ),
+        FFRoute(
+          name: 'TropicalYogurtParfait',
+          path: '/tropicalYogurtParfait',
+          builder: (context, params) => const TropicalYogurtParfaitWidget(),
+        ),
+        FFRoute(
+          name: 'BowlMediterrneodeQuinoa',
+          path: '/bowlMediterrneodeQuinoa',
+          builder: (context, params) => const BowlMediterrneodeQuinoaWidget(),
+        ),
+        FFRoute(
+          name: 'WrapdePolloyVerduras',
+          path: '/wrapdePolloyVerduras',
+          builder: (context, params) => const WrapdePolloyVerdurasWidget(),
+        ),
+        FFRoute(
+          name: 'SopadeLentejasyVegetales',
+          path: '/sopadeLentejasyVegetales',
+          builder: (context, params) => const SopadeLentejasyVegetalesWidget(),
+        ),
+        FFRoute(
+          name: 'PescadoalHornoconEsprragos',
+          path: '/pescadoalHornoconEsprragos',
+          builder: (context, params) => const PescadoalHornoconEsprragosWidget(),
+        ),
+        FFRoute(
+          name: 'PagoPlatos',
+          path: '/pagoPlatos',
+          builder: (context, params) => PagoPlatosWidget(
+            monto: params.getParam('monto', ParamType.String),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

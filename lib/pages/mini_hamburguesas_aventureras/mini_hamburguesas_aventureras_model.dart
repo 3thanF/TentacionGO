@@ -1,9 +1,10 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/form_field_controller.dart';
-import 'sandwich_desayuno_widget.dart' show SandwichDesayunoWidget;
+import 'mini_hamburguesas_aventureras_widget.dart'
+    show MiniHamburguesasAventurerasWidget;
 import 'package:flutter/material.dart';
 
-class SandwichDesayunoModel extends FlutterFlowModel<SandwichDesayunoWidget> {
+class MiniHamburguesasAventurerasModel
+    extends FlutterFlowModel<MiniHamburguesasAventurerasWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
@@ -11,15 +12,6 @@ class SandwichDesayunoModel extends FlutterFlowModel<SandwichDesayunoWidget> {
   FocusNode? txtMontoFocusNode;
   TextEditingController? txtMontoController;
   String? Function(BuildContext, String?)? txtMontoControllerValidator;
-  // State field(s) for CheckboxGroup widget.
-  List<String>? checkboxGroupValues1;
-  FormFieldController<List<String>>? checkboxGroupValueController1;
-  // State field(s) for CheckboxGroup widget.
-  List<String>? checkboxGroupValues2;
-  FormFieldController<List<String>>? checkboxGroupValueController2;
-  // State field(s) for CheckboxGroup widget.
-  List<String>? checkboxGroupValues3;
-  FormFieldController<List<String>>? checkboxGroupValueController3;
 
   /// Initialization and disposal methods.
 

@@ -7,6 +7,10 @@ class HuevosMexicanosModel extends FlutterFlowModel<HuevosMexicanosWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // State field(s) for txtMonto widget.
+  FocusNode? txtMontoFocusNode;
+  TextEditingController? txtMontoController;
+  String? Function(BuildContext, String?)? txtMontoControllerValidator;
   // State field(s) for CheckboxGroup widget.
   List<String>? checkboxGroupValues1;
   FormFieldController<List<String>>? checkboxGroupValueController1;
@@ -25,6 +29,8 @@ class HuevosMexicanosModel extends FlutterFlowModel<HuevosMexicanosWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
+    txtMontoFocusNode?.dispose();
+    txtMontoController?.dispose();
   }
 
   /// Action blocks are added here.
