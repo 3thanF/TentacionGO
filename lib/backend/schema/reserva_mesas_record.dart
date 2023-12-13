@@ -25,11 +25,6 @@ class ReservaMesasRecord extends FirestoreRecord {
   DateTime? get fecha => _fecha;
   bool hasFecha() => _fecha != null;
 
-  // "monto" field.
-  int? _monto;
-  int get monto => _monto ?? 0;
-  bool hasMonto() => _monto != null;
-
   // "correoElectronico" field.
   String? _correoElectronico;
   String get correoElectronico => _correoElectronico ?? '';
@@ -38,7 +33,6 @@ class ReservaMesasRecord extends FirestoreRecord {
   void _initializeFields() {
     _nombre = snapshotData['nombre'] as String?;
     _fecha = snapshotData['fecha'] as DateTime?;
-    _monto = castToType<int>(snapshotData['monto']);
     _correoElectronico = snapshotData['correoElectronico'] as String?;
   }
 
@@ -79,14 +73,12 @@ class ReservaMesasRecord extends FirestoreRecord {
 Map<String, dynamic> createReservaMesasRecordData({
   String? nombre,
   DateTime? fecha,
-  int? monto,
   String? correoElectronico,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'nombre': nombre,
       'fecha': fecha,
-      'monto': monto,
       'correoElectronico': correoElectronico,
     }.withoutNulls,
   );
@@ -102,13 +94,12 @@ class ReservaMesasRecordDocumentEquality
   bool equals(ReservaMesasRecord? e1, ReservaMesasRecord? e2) {
     return e1?.nombre == e2?.nombre &&
         e1?.fecha == e2?.fecha &&
-        e1?.monto == e2?.monto &&
         e1?.correoElectronico == e2?.correoElectronico;
   }
 
   @override
-  int hash(ReservaMesasRecord? e) => const ListEquality()
-      .hash([e?.nombre, e?.fecha, e?.monto, e?.correoElectronico]);
+  int hash(ReservaMesasRecord? e) =>
+      const ListEquality().hash([e?.nombre, e?.fecha, e?.correoElectronico]);
 
   @override
   bool isValidKey(Object? o) => o is ReservaMesasRecord;

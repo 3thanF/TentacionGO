@@ -41,10 +41,8 @@ class _ConfirmacionPagoReservacionWidgetState
       await ReservaMesasRecord.collection
           .doc()
           .set(createReservaMesasRecordData(
-            nombre: currentUserDisplayName,
+            nombre: widget.nombre,
             fecha: widget.fecha,
-            monto: 11540,
-            correoElectronico: currentUserEmail,
           ));
     });
 

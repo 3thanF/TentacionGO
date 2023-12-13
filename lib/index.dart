@@ -55,3 +55,4 @@ export '/pages/sopade_lentejasy_vegetales/sopade_lentejasy_vegetales_widget.dart
 export '/pages/pescadoal_hornocon_esprragos/pescadoal_hornocon_esprragos_widget.dart'
     show PescadoalHornoconEsprragosWidget;
 export '/pages/pago_platos/pago_platos_widget.dart' show PagoPlatosWidget;
+export '/pages/mis_mesas/mis_mesas_widget.dart' show MisMesasWidget;

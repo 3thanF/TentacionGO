@@ -266,6 +266,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => PagoPlatosWidget(
             monto: params.getParam('monto', ParamType.String),
           ),
+        ),
+        FFRoute(
+          name: 'misMesas',
+          path: '/misMesas',
+          builder: (context, params) => const MisMesasWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
