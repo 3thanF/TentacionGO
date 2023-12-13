@@ -94,7 +94,7 @@ class _InformacionParaReservacionesDeMesasWidgetState
           borderWidth: 1.0,
           buttonSize: 60.0,
           icon: Icon(
-            Icons.arrow_back_rounded,
+            Icons.chevron_left,
             color: FlutterFlowTheme.of(context).primaryText,
             size: 30.0,
           ),
@@ -159,7 +159,7 @@ class _InformacionParaReservacionesDeMesasWidgetState
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 15.0, 16.0, 0.0),
                       child: Text(
                         'Agenda una reservación para una o varias mesas en nuestro restaurante. Acomodaremos todo para que tu reservación sea todo un éxito.',
                         style: FlutterFlowTheme.of(context).labelMedium,
@@ -226,8 +226,8 @@ class _InformacionParaReservacionesDeMesasWidgetState
                                 children: [
                                   ClipRRect(
                                     borderRadius: BorderRadius.circular(18.0),
-                                    child: Image.asset(
-                                      'assets/images/r-architecture-TRCJ-87Yoh0-unsplash.jpg',
+                                    child: Image.network(
+                                      'https://images.pexels.com/photos/1537635/pexels-photo-1537635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                                       width: 100.0,
                                       height: 100.0,
                                       fit: BoxFit.cover,
@@ -285,7 +285,7 @@ class _InformacionParaReservacionesDeMesasWidgetState
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 12.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
               child: Container(
                 width: MediaQuery.sizeOf(context).width * 0.9,
                 decoration: BoxDecoration(

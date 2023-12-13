@@ -1,30 +1,52 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'confirmacion_pago_mesa_model.dart';
-export 'confirmacion_pago_mesa_model.dart';
+import 'confirmacion_pago_reservacion_model.dart';
+export 'confirmacion_pago_reservacion_model.dart';
 
-class ConfirmacionPagoMesaWidget extends StatefulWidget {
-  const ConfirmacionPagoMesaWidget({super.key});
+class ConfirmacionPagoReservacionWidget extends StatefulWidget {
+  const ConfirmacionPagoReservacionWidget({
+    super.key,
+    required this.nombre,
+    required this.fecha,
+  });
+
+  final String? nombre;
+  final DateTime? fecha;
 
   @override
-  _ConfirmacionPagoMesaWidgetState createState() =>
-      _ConfirmacionPagoMesaWidgetState();
+  _ConfirmacionPagoReservacionWidgetState createState() =>
+      _ConfirmacionPagoReservacionWidgetState();
 }
 
-class _ConfirmacionPagoMesaWidgetState
-    extends State<ConfirmacionPagoMesaWidget> {
-  late ConfirmacionPagoMesaModel _model;
+class _ConfirmacionPagoReservacionWidgetState
+    extends State<ConfirmacionPagoReservacionWidget> {
+  late ConfirmacionPagoReservacionModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ConfirmacionPagoMesaModel());
+    _model = createModel(context, () => ConfirmacionPagoReservacionModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await ReservaMesasRecord.collection
+          .doc()
+          .set(createReservaMesasRecordData(
+            nombre: currentUserDisplayName,
+            fecha: widget.fecha,
+            monto: 11540,
+            correoElectronico: currentUserEmail,
+          ));
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -72,7 +94,7 @@ class _ConfirmacionPagoMesaWidgetState
                       size: 20.0,
                     ),
                     onPressed: () async {
-                      context.pop();
+                      context.pushNamed('Home');
                     },
                   ),
                 ],
@@ -114,13 +136,16 @@ class _ConfirmacionPagoMesaWidgetState
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
               child: Text(
                 '₡11.540',
-                style: FlutterFlowTheme.of(context).displayLarge,
+                style: FlutterFlowTheme.of(context).displayLarge.override(
+                      fontFamily: 'Urbanist',
+                      color: FlutterFlowTheme.of(context).primaryText,
+                    ),
               ),
             ),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(24.0, 8.0, 24.0, 0.0),
               child: Text(
-                'El pago ha sido realizado con éxito, los montos pueden tardar en verse reflejados en su cuenta bancaria dependiendo cual entidad sea con la que usted esté asociado/a.',
+                'El pago ha sido realizado con éxito.',
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).labelLarge,
               ),
@@ -173,6 +198,86 @@ class _ConfirmacionPagoMesaWidgetState
                                   0.0, 0.0, 0.0, 4.0),
                               child: Text(
                                 '₡11.540',
+                                style: FlutterFlowTheme.of(context).labelMedium,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(32.0, 20.0, 32.0, 0.0),
+              child: Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).primaryBackground,
+                  borderRadius: BorderRadius.circular(8.0),
+                  border: Border.all(
+                    color: FlutterFlowTheme.of(context).alternate,
+                    width: 2.0,
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 12.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                        child: AuthUserStreamWidget(
+                          builder: (context) => Image.network(
+                            currentUserPhoto,
+                            width: 40.0,
+                            height: 40.0,
+                            fit: BoxFit.fitWidth,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 4.0),
+                              child: Text(
+                                'Reservación a nombre de:',
+                                style: FlutterFlowTheme.of(context).bodyLarge,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 4.0),
+                              child: Text(
+                                widget.nombre!,
+                                style: FlutterFlowTheme.of(context).labelMedium,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 4.0),
+                              child: Text(
+                                'Para la fecha:',
+                                style: FlutterFlowTheme.of(context).bodyLarge,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 4.0),
+                              child: Text(
+                                valueOrDefault<String>(
+                                  dateTimeFormat('d/M h:mm a', widget.fecha),
+                                  'null',
+                                ),
                                 style: FlutterFlowTheme.of(context).labelMedium,
                               ),
                             ),

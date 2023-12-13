@@ -102,9 +102,170 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const InformacionPagoMesasWidget(),
         ),
         FFRoute(
-          name: 'Confirmacion_Pago_Mesa',
-          path: '/confirmacionPagoMesa',
-          builder: (context, params) => const ConfirmacionPagoMesaWidget(),
+          name: 'Confirmacion_Pago_Reservacion',
+          path: '/confirmacionPagoReservacion',
+          builder: (context, params) => ConfirmacionPagoReservacionWidget(
+            nombre: params.getParam('nombre', ParamType.String),
+            fecha: params.getParam('fecha', ParamType.DateTime),
+          ),
+        ),
+        FFRoute(
+          name: 'Crear_Cuenta',
+          path: '/crearCuenta',
+          builder: (context, params) => const CrearCuentaWidget(),
+        ),
+        FFRoute(
+          name: 'Huevos_Mexicanos',
+          path: '/huevosMexicanos',
+          builder: (context, params) => const HuevosMexicanosWidget(),
+        ),
+        FFRoute(
+          name: 'Sandwich_Desayuno',
+          path: '/sandwichDesayuno',
+          builder: (context, params) => const SandwichDesayunoWidget(),
+        ),
+        FFRoute(
+          name: 'Paella',
+          path: '/paella',
+          builder: (context, params) => const PaellaWidget(),
+        ),
+        FFRoute(
+          name: 'Risotto',
+          path: '/risotto',
+          builder: (context, params) => const RisottoWidget(),
+        ),
+        FFRoute(
+          name: 'Filet_Mignon',
+          path: '/filetMignon',
+          builder: (context, params) => const FiletMignonWidget(),
+        ),
+        FFRoute(
+          name: 'Salmon',
+          path: '/salmon',
+          builder: (context, params) => const SalmonWidget(),
+        ),
+        FFRoute(
+          name: 'Perfil',
+          path: '/perfil',
+          builder: (context, params) => const PerfilWidget(),
+        ),
+        FFRoute(
+          name: 'Ubicacion',
+          path: '/ubicacion',
+          builder: (context, params) => const UbicacionWidget(),
+        ),
+        FFRoute(
+          name: 'Reviews',
+          path: '/reviews',
+          builder: (context, params) => const ReviewsWidget(),
+        ),
+        FFRoute(
+          name: 'Politicas',
+          path: '/politicas',
+          builder: (context, params) => const PoliticasWidget(),
+        ),
+        FFRoute(
+          name: 'Informacion_Para_Reservaciones_De_Eventos',
+          path: '/informacionParaReservacionesDeEventos',
+          builder: (context, params) =>
+              const InformacionParaReservacionesDeEventosWidget(),
+        ),
+        FFRoute(
+          name: 'crearReview',
+          path: '/crearReview',
+          builder: (context, params) => const CrearReviewWidget(),
+        ),
+        FFRoute(
+          name: 'informacionPersonal',
+          path: '/informacionPersonal',
+          builder: (context, params) => const InformacionPersonalWidget(),
+        ),
+        FFRoute(
+          name: 'marcarAlergias',
+          path: '/marcarAlergias',
+          builder: (context, params) => const MarcarAlergiasWidget(),
+        ),
+        FFRoute(
+          name: 'alergias',
+          path: '/alergias',
+          builder: (context, params) => const AlergiasWidget(),
+        ),
+        FFRoute(
+          name: 'misReservaciones',
+          path: '/misReservaciones',
+          builder: (context, params) => const MisReservacionesWidget(),
+        ),
+        FFRoute(
+          name: 'Soporte',
+          path: '/soporte',
+          builder: (context, params) => const SoporteWidget(),
+        ),
+        FFRoute(
+          name: 'MiniSandwichDivertido',
+          path: '/miniSandwichDivertido',
+          builder: (context, params) => const MiniSandwichDivertidoWidget(),
+        ),
+        FFRoute(
+          name: 'TortitasFelices',
+          path: '/tortitasFelices',
+          builder: (context, params) => const TortitasFelicesWidget(),
+        ),
+        FFRoute(
+          name: 'MiniHamburguesasAventureras',
+          path: '/miniHamburguesasAventureras',
+          builder: (context, params) => const MiniHamburguesasAventurerasWidget(),
+        ),
+        FFRoute(
+          name: 'BarquitosdePescadoyTesorodeMaz',
+          path: '/barquitosdePescadoyTesorodeMaz',
+          builder: (context, params) => const BarquitosdePescadoyTesorodeMazWidget(),
+        ),
+        FFRoute(
+          name: 'EstrellasdePolloenelJardn',
+          path: '/estrellasdePolloenelJardn',
+          builder: (context, params) => const EstrellasdePolloenelJardnWidget(),
+        ),
+        FFRoute(
+          name: 'PizzadeSueos',
+          path: '/pizzadeSueos',
+          builder: (context, params) => const PizzadeSueosWidget(),
+        ),
+        FFRoute(
+          name: 'AvenadeManzanayCanela',
+          path: '/avenadeManzanayCanela',
+          builder: (context, params) => const AvenadeManzanayCanelaWidget(),
+        ),
+        FFRoute(
+          name: 'TropicalYogurtParfait',
+          path: '/tropicalYogurtParfait',
+          builder: (context, params) => const TropicalYogurtParfaitWidget(),
+        ),
+        FFRoute(
+          name: 'BowlMediterrneodeQuinoa',
+          path: '/bowlMediterrneodeQuinoa',
+          builder: (context, params) => const BowlMediterrneodeQuinoaWidget(),
+        ),
+        FFRoute(
+          name: 'WrapdePolloyVerduras',
+          path: '/wrapdePolloyVerduras',
+          builder: (context, params) => const WrapdePolloyVerdurasWidget(),
+        ),
+        FFRoute(
+          name: 'SopadeLentejasyVegetales',
+          path: '/sopadeLentejasyVegetales',
+          builder: (context, params) => const SopadeLentejasyVegetalesWidget(),
+        ),
+        FFRoute(
+          name: 'PescadoalHornoconEsprragos',
+          path: '/pescadoalHornoconEsprragos',
+          builder: (context, params) => const PescadoalHornoconEsprragosWidget(),
+        ),
+        FFRoute(
+          name: 'PagoPlatos',
+          path: '/pagoPlatos',
+          builder: (context, params) => PagoPlatosWidget(
+            monto: params.getParam('monto', ParamType.String),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
